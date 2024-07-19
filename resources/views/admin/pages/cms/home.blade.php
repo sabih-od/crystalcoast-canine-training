@@ -29,7 +29,7 @@
                     <input type="hidden" name="media_collections[]" value="home_up_coming_img">
                     <input type="hidden" name="media_collections[]" value="antic_image">
 
-
+{{-- 
                     <div class="row mt-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -71,7 +71,7 @@
                                     value="{{ old('meta_description', $page->meta_description) }}" required>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row mt-5">
                         <label for="title" style="font-size:2.5rem; color: #555; font-weight: bold;"
@@ -96,23 +96,17 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="contact_banner_title">Banner heading</label>
+                                <label for="contact_banner_title">Banner First heading</label>
                                 <textarea class="form-control" name="banner_heading" placeholder="Enter Banner Title">{{ old('banner_heading', $content['banner_heading'] ?? '') }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="contact_banner_title">Banner heading</label>
+                                <label for="contact_banner_title">Banner Second heading</label>
                                 <textarea class="form-control" name="banner_heading1" placeholder="Enter Banner Title">{{ old('banner_heading1', $content['banner_heading1'] ?? '') }}</textarea>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="contact_banner_title">Banner heading</label>
-                                <textarea class="form-control" name="banner_heading2" placeholder="Enter Banner Title">{{ old('banner_heading2', $content['banner_heading2'] ?? '') }}</textarea>
-                            </div>
-                        </div>
-
+                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="contact_banner_title">Banner Paragraph</label>
@@ -122,7 +116,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="contact_banner_title">Banner Button</label>
+                                <label for="contact_banner_title">Banner Thid heading</label>
                                 <textarea class="form-control" name="banner_btn" placeholder="Enter Banner Title">{{ old('banner_btn', $content['banner_btn'] ?? '') }}</textarea>
                             </div>
                         </div>

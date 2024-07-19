@@ -28,7 +28,7 @@
                         if not thousands per year on health tests, spay/neuter, flea/ tick/various worm
                         preventatives, and even countless dollars on collars, leashes, and sometimes clothing.
                     </p>
-                    <a href="protecting-your-dog.php" class="themeBtn">Continue Reading</a>
+                    <a href=" {{ route('front.protecting') }}" class="themeBtn">Continue Reading</a>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-up">
@@ -41,7 +41,7 @@
                         feeding" or "not giving the food away free." As we train our dogs, it is important to find
                         something they will work for; a toy, food, or good old-fashioned praise.
                     </p>
-                    <a href="the-welfare-dog.php" class="themeBtn">Continue Reading</a>
+                    <a href="{{ route('front.welfare') }}" class="themeBtn">Continue Reading</a>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-up">
@@ -54,7 +54,7 @@
                         a job, or on a promise. Well this phrase is especially important in dog training. Dogs are
                         just like we were as children. I have a teen and a toddler, so can be very relatable.
                     </p>
-                    <a href="follow-through.php" class="themeBtn">Continue Reading</a>
+                    <a href=" {{ route('front.follow') }}" class="themeBtn">Continue Reading</a>
                 </div>
             </div>
         </div>
