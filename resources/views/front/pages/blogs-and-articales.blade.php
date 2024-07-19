@@ -77,7 +77,7 @@
                 household. Here’s some info to get you started, courtesy of Crystal Coast Canines.
             </p>
             <div data-aos="fade-up">
-                <a href="adopting-a-service-dog.php" class="themeBtn">Read Article</a>
+                <a href="{{ route('front.adopting') }}" class="themeBtn">Read Article</a>
             </div>
         </div>
     </div>
