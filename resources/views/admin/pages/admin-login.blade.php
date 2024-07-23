@@ -55,7 +55,7 @@
                         </div>
 
                         <form class="form-horizontal mt-4" action="{{ route('admin.login') }}" method="POST">
-                            @csrf
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <div class="col-12">
                                     <label for="username">Email</label>
