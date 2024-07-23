@@ -14,16 +14,13 @@ class Setting extends Model implements HasMedia
     protected $fillable = [
         'header_logo',
         'footer_logo',
-        'fav_image',
         'phone_no',
         'address',
         'email',
+        'footer_bottom_text',
         'social_link_1',
         'social_link_2',
-        'social_link_3',
-        'social_link_4',
-//        'pay_out_days',
-//        'product_return_days'
+        'social_link_3'
     ];
 
     public function settingImage($collection_name)

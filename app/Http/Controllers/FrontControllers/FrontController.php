@@ -28,66 +28,60 @@ class FrontController extends Controller
    public function index()
    {
 
-      //  $page = $this->cmsPagesService->getPageBySlug('home');
-      //  $data = $page->content;
-      //  $testimonials = Testimonial::get();
-      //  $blogs = Blog::get();
+       $page = $this->cmsPagesService->getPageBySlug('home');
       return view(
          'front.pages.index'
-         //  ,compact('data','page','testimonials','blogs')
+          ,compact('page')
       );
    }
 
    public function about()
    {
-      //  $page = $this->cmsPagesService->getPageBySlug('about');
-      //  $data = $page->content;
+      $page = $this->cmsPagesService->getPageBySlug('about');
+      // $data = $page->content;
       return view(
-         'front.pages.about'
-         // ,compact('data','page')
+         'front.pages.about',
+         compact('page')
       );
    }
 
    public function contact()
    {
-      //  $page = $this->cmsPagesService->getPageBySlug('contact');
-      //  $data = $page->content;
+      $page = $this->cmsPagesService->getPageBySlug('contact');
       return view(
          'front.pages.contact-us'
-         //  ,compact('data','page')
+         ,
+         compact('page')
       );
    }
 
    public function faq()
    {
-      //  $page = $this->cmsPagesService->getPageBySlug('consign');
-      //  $data = $page->content;
+       $page = $this->cmsPagesService->getPageBySlug('faq');
       return view(
          'front.pages.faq'
-         //  ,compact('data','page')
+          ,compact('page')
       );
    }
 
 
    public function gallery()
    {
-      //  $page = $this->cmsPagesService->getPageBySlug('retail');
-      //  $data = $page->content;
+       $page = $this->cmsPagesService->getPageBySlug('graduate');
 
       return view(
          'front.pages.gallery'
-         //  ,compact('data','page')
+          ,compact('page')
       );
    }
 
    public function blogs()
    {
-      //  $page = $this->cmsPagesService->getPageBySlug('retail');
-      //  $data = $page->content;
+       $page = $this->cmsPagesService->getPageBySlug('blog');
 
       return view(
          'front.pages.blogs-and-articales'
-         //  ,compact('data','page')
+          ,compact('page')
       );
    }
 
@@ -113,7 +107,7 @@ class FrontController extends Controller
          //  ,compact('data','page')
       );
    }
-   
+
 
    public function groupTraining()
    {
@@ -125,7 +119,7 @@ class FrontController extends Controller
          //  ,compact('data','page')
       );
    }
-   
+
 
    public function summerMiniSessions()
    {
@@ -148,7 +142,7 @@ class FrontController extends Controller
          //  ,compact('data','page')
       );
    }
-   
+
    public function theWelfareDog()
    {
       //  $page = $this->cmsPagesService->getPageBySlug('retail');

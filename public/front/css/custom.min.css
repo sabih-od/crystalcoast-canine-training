@@ -299,7 +299,7 @@ header {
 /* slider css */
 
 .mainSlider {
-    background: url(../images/dogslide.webp) no-repeat top center/ cover;
+    /* background: url(../images/dogslide.webp) no-repeat top center/ cover; */
     height: 1000px;
     position: relative;
     z-index: 1;

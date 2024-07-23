@@ -72,23 +72,6 @@
                                             @endif
                                         </div>
 
-                                        <div class="form-group col-md-4">
-                                            <label for="fav_image">Favicon Image</label>
-                                            <input type="file" name="fav_image" id="fav_image" class="form-control"
-                                                   onchange="previewImage(this, 'fav_image_preview')" accept="image/*">
-
-                                            @if(!empty($settings->fav_icon))
-                                                <img src="{{ asset('setting_images/' . $settings->fav_icon) ?? '' }}"
-                                                     class="img-fluid"
-                                                     alt="img">
-                                            @else
-                                                @foreach($setting->getMedia('fav_icon') as $media)
-                                                    <img src="{{ $media->getUrl() }}" alt="Existing Banner Image"
-                                                         style="max-width: 200px; max-height: 200px; margin-top: 10px;">
-                                                @endforeach
-                                            @endif
-                                        </div>
-
                                         <!-- Add more fields for phone_no, address, email, social links as needed -->
 
                                         <div class="form-group col-md-4">
@@ -108,7 +91,6 @@
                                             <input type="text" name="email" id="email" class="form-control"
                                                    value="{{ $setting->email ?? ''}}">
                                         </div>
-
                                         <div class="form-group col-md-4">
                                             <label for="social_link_1">Social Link 1</label>
                                             <input type="text" name="social_link_1" id="social_link_1"
@@ -126,25 +108,13 @@
                                             <input type="text" name="social_link_3" id="social_link_3"
                                                    class="form-control" value="{{ $setting->social_link_3 }}">
                                         </div>
-
                                         <div class="form-group col-md-4">
-                                            <label for="social_link_4">Social Link 4</label>
-                                            <input type="text" name="social_link_4" id="social_link_4"
-                                                   class="form-control" value="{{ $setting->social_link_4 }}">
+                                            <label for="email">Footer Bottom Text</label>
+                                            <input type="text" name="email" id="email" class="form-control"
+                                                   value="{{ $setting->footer_bottom_text ?? ''}}">
                                         </div>
 
-                                        {{--                                        <div class="form-group col-md-4">--}}
-                                        {{--                                            <label for="pay_out_days">Pay out days</label>--}}
-                                        {{--                                            <input type="text" name="pay_out_days" id="pay_out_days"--}}
-                                        {{--                                                   class="form-control" value="{{ $setting->pay_out_days }}">--}}
-                                        {{--                                        </div>--}}
-
-                                        {{--                                        <div class="form-group col-md-4">--}}
-                                        {{--                                            <label for="product_return_days">Product return days</label>--}}
-                                        {{--                                            <input type="text" name="product_return_days" id="product_return_days"--}}
-                                        {{--                                                   class="form-control" value="{{ $setting->product_return_days }}">--}}
-                                        {{--                                        </div>--}}
-
+                                       
                                         <div class="form-group mb-0">
                                             <div>
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light">

@@ -4,17 +4,15 @@
            <div class="row justify-content-between">
                <div class="col-md-3">
                    <div class="text-center">
-                       <a href="#" class="footerLogo"><img src="{{ asset('front/images/footerlogo.webp') }}"
+                       <a href="#" class="footerLogo"><img src="{{ $settings->settingImage('footer_logo') ?? '' }}"
                                class="img-fluid" alt="img"></a>
                        <ul class="footerSocial">
-                           <li><a href="https://www.facebook.com/CrystalCoastCanines/" target="_blank"><i
+                           <li><a href="{{ $settings->social_link_1 ?? '' }}" target="_blank"><i
                                        class="fab fa-facebook-f"></i></a></li>
-                           <li><a href="https://www.instagram.com/cc.canine.training?igsh=MXgwd243Y2JkZml3ZA=="
-                                   target="_blank"><i class="fab fa-instagram"></i></a></li>
-                           <li><a href="https://www.yelp.com/biz/crystal-coast-canine-training-surf-city-2"
-                                   target="_blank"><i class="fab fa-yelp"></i></a></li>
-                           <!-- <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
-                           <!-- <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li> -->
+                           <li><a href="{{ $settings->social_link_2 ?? '' }}" target="_blank"><i
+                                       class="fab fa-instagram"></i></a></li>
+                           <li><a href="{{ $settings->social_link_3 ?? '' }}" target="_blank"><i
+                                       class="fab fa-yelp"></i></a></li>
                        </ul>
                    </div>
                </div>
@@ -37,35 +35,25 @@
                    </div>
                    <div class="calFoter">
                        <ul>
-                           <li><a href="https://maps.app.goo.gl/Pq9QG2mp2bCe9oyMA" target="_blank"><img
+                           <li><a href="{{ $settings->address ?? '' }}" target="_blank"><img
                                        src="{{ asset('front/images/loc.webp') }}" class="img-fluid"
                                        alt="img"><span>Get Direction On
                                        Google map</span></a></li>
-                           <li><a href="mailto:info@example.com"><img src="{{ asset('front/images/email.webp') }}"
-                                       class="img-fluid" alt="img"><span>Email : info@example.com</span></a></li>
-                           <li><a href="tel:+2527250674"><img src="{{ asset('front/images/call.webp') }}"
-                                       class="img-fluid" alt="img"><span>24/7
+                           <li><a href="mailto:{{ $settings->email ?? '' }}"><img
+                                       src="{{ asset('front/images/email.webp') }}" class="img-fluid"
+                                       alt="img"><span>Email : {{ $settings->email ?? '' }}</span></a></li>
+                           <li><a href="tel:{{ $settings->phone_no ?? '' }}"><img
+                                       src="{{ asset('front/images/call.webp') }}" class="img-fluid"
+                                       alt="img"><span>24/7
                                        Call : (252) 725-0674</span></a></li>
                        </ul>
                    </div>
                </div>
-               <!-- <div class="col-md-3">
-                <div class="quickList">
-                    <h2>Newsletter</h2>
-                </div>
-                <div class="newsleter">
-                    <p>Subscribe to our Newsletter to be updated,
-                        we promise not to spam.</p>
-                    <form>
-                        <input type="text" placeholder="Email address">
-                        <button class="themeBtn">Subscribe</button>
-                    </form>
-                </div>
-            </div> -->
+
            </div>
            <div class="row copyRight">
                <div class="col-md-12">
-                   <p>Copyright © 2024 CRYSTAL COAST CANINE Training - All Rights Reserved.</p>
+                   <p>Copyright © {{ $settings->footer_bottom_text }}</p>
                </div>
            </div>
        </div>

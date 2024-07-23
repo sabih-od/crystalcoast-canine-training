@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0" style="font-size: 2.5rem; color: #333; font-weight: bold;">My Work Page
+                        <h1 class="m-0" style="font-size: 2.5rem; color: #333; font-weight: bold;">Faq Page
                             Details</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#" style="color: #666;">My Work </a></li>
+                            <li class="breadcrumb-item"><a href="#" style="color: #666;">Faq</a></li>
                             <li class="breadcrumb-item active" aria-current="page"
                                 style="color: #333; font-weight: bold;">
                                 Dashboard
@@ -25,28 +25,12 @@
                     @csrf
                     <input type="hidden" name="slug" value="{{ $page->slug }}">
                     <input type="hidden" name="media_collections[]" value="background_banner_image">
+                    <div class="row my-5">
+                    <label for="title" style="font-size:2.5rem; color: #555; font-weight: bold;"
+                    class="text-center">---------------Faq
+                    Page
+                    Banner Section-------------------</label>
 
-                    <div class="row mt-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="meta_title">Title</label>
-                                <input type="text" class="form-control" id="meta_title" name="meta_title"
-                                       placeholder="Enter Title" value="{{ old('meta_title', $page->meta_title) }}"
-                                       required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="meta_description">Description</label>
-                                <input type="text" class="form-control" id="meta_description" name="meta_description"
-                                       placeholder="Enter Description"
-                                       value="{{ old('meta_description', $page->meta_description) }}" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="background_banner_image">Banner Image</label>
@@ -65,22 +49,36 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="contact_banner_title">Banner Title</label>
-                                <textarea class="form-control" name="contact_banner_title"
-                                          placeholder="Enter Banner Title">{{ old('contact_banner_title', $content['contact_banner_title'] ?? '') }}</textarea>
+                                <textarea class="form-control" name="banner_heading"
+                                          placeholder="Enter Banner Title">{{ old('banner_heading', $content['banner_heading'] ?? '') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-5">
+                        <label for="title" style="font-size:2.5rem; color: #555; font-weight: bold;"
+                        class="text-center">---------------Faq
+                        Page
+                        Story Section-------------------</label>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contact_banner_title">Story Title</label>
+                                <textarea class="form-control" name="st_heading" placeholder="Enter Banner Title">{{ old('st_heading', $content['st_heading'] ?? '') }}</textarea>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="contact_banner_title">Contact Form heading</label>
-                            <textarea class="form-control" name="contact_form_heading"
-                                      placeholder="Enter Banner Title">{{ old('contact_form_heading', $content['contact_form_heading'] ?? '') }}</textarea>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contact_banner_title">Story Description</label>
+                                <textarea class="form-control" name="st_des" placeholder="Enter Banner Title">{{ old('st_des', $content['st_des'] ?? '') }}</textarea>
+                            </div>
                         </div>
-
+                    </div>
 
                         <div class="col-md-12 mt-3">
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-                    </div>
+                   
                 </form>
 
             </div>
