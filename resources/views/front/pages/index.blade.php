@@ -1,17 +1,35 @@
 @extends('front.layout.app')
 <!-- HERO MAIN SECTION -->
+
 @section('content')
-    <section class="mainSlider">
+<section class="mainSlider">
         <div class="swiper-container homeSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
+                    <div class="slide-inner bg-image" data-background="{{ $page->cmsImages('background_banner_image') }}">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="slideContent slideOne">
+                                        <h2>{{ $page->content['banner_heading'] ?? '' }}</h2>
+                                        <h3><span>{{ $page->content['banner_heading1'] ?? '' }}</span></h3>
+
+                                        <p>{{ $page->content['banner_para']  ?? ''}}</p>
+                                        <h5>{{ $page->content['banner_heading2'] ?? '' }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="swiper-slide">
                     <div class="slide-inner bg-image">
                         <div class="container">
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-md-12">
                                     <div class="slideContent slideOne">
-                                        <h2>CRYSTAL COAST</h2>
-                                        <h3><span>CANINE TRAINING</span></h3>
+                                        <h2>CRYSTAL COAST CANINE </h2>
+                                        <h3><span>TRAINING</span></h3>
 
                                         <p>“Be the most interesting human your dog has ever met.“</p>
                                         <h5>Ralf Weber</h5>
@@ -37,24 +55,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner bg-image">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-md-12">
-                                    <div class="slideContent slideOne">
-                                        <h2>CRYSTAL COAST CANINE </h2>
-                                        <h3><span>TRAINING</span></h3>
-
-                                        <p>“Be the most interesting human your dog has ever met.“</p>
-                                        <h5>Ralf Weber</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -65,19 +66,16 @@
                 <div class="col-md-6" data-aos="fade-right">
                     <div class="aboutwrap">
                         <figure>
-                            <img src="{{ asset('front/images/about1.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ $page->cmsImages('st_image') ?? '' }}" class="img-fluid" alt="">
                         </figure>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
                     <div class="aboutcntnt">
-                        <h4>Hello</h4>
-                        <h3>EXPERT DOG TRAINING</h3>
-                        <p>Welcome to CRYSTAL COAST CANINE TRAINING LLC! We are dedicated to providing effective and
-                            personalized dog training services to help you and your furry friend bond and live happily
-                            ever after. Contact us today to schedule a consultation and take the first step towards a
-                            well-behaved dog.</p>
-                        <a href="{{ route('front.about') }}" class="themeBtn">Find Out More</a>
+                        <h4>{{ $page->content['st_title'] ?? '' }}</h4>
+                        <h3>{{ $page->content['st_heading'] ?? '' }}</h3>
+                        <p>{{ $page->content['st_des'] ?? '' }}</p>
+                        <a href="{{ route('front.about') }}" class="themeBtn">{{ $page->content['st_btn'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -166,10 +164,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="scheduleContnt" data-aos="fade-up">
-                        <h2>Schedule an in-person evaluation TODAY</h2>
+                        <h2>{{ $page->content['sch_heading'] ?? '' }}</h2>
                         <a href="#" class="themeBtn" data-toggle="modal"
-                            data-target="#exampleModalCenter">SCHEDULE
-                            EVALUATION</a>
+                            data-target="#exampleModalCenter">{{ $page->content['sch_btn'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -242,12 +239,12 @@
                 <div class="col-md-6">
                     <div class="lawCard" data-aos="fade-up">
                         <figure>
-                            <img src="{{ asset('front/images/law1.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ $page->cmsImages('dic_img_1') ?? '' }}" class="img-fluid" alt="">
                         </figure>
                         <div class="lawText">
-                            <h2 class="mainHead text-white">Military/Law <br> Enforcement</h2>
+                            <h2 class="mainHead text-white">{{ $page->content['dis_heading'] ?? '' }}</h2>
                             <div class="discoundCard">
-                                <h4><span>Discount</span>15%</h4>
+                                <h4><span>{{ $page->content['dis_cir_heading'] ?? '' }}</span>{{ $page->content['dis_cir_per'] ?? '' }}</h4>
                             </div>
                         </div>
                     </div>
@@ -255,12 +252,12 @@
                 <div class="col-md-6">
                     <div class="lawCard" data-aos="fade-up">
                         <figure>
-                            <img src="{{ asset('front/images/law2.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ $page->cmsImages('dic_img_2') ?? '' }}" class="img-fluid" alt="">
                         </figure>
                         <div class="lawText">
-                            <h2 class="mainHead text-white">Multiple Dog</h2>
+                            <h2 class="mainHead text-white">{{ $page->content['dis_heading_1'] ?? '' }}</h2>
                             <div class="discoundCard">
-                                <h4><span>Discount</span>20%</h4>
+                                <h4><span>{{ $page->content['dis_cir_heading_1'] ?? '' }}</span>{{ $page->content['dis_cir_per_1'] }}</h4>
                             </div>
                         </div>
                     </div>
@@ -495,18 +492,15 @@
             <div class="row align-items-center justify-content-end">
                 <div class="col-md-5" data-aos="fade-right">
                     <div class="person--content">
-                        <h4 class="subHead">Don’t know where to begin?</h4>
-                        <h2 class="mainHead">IN-PERSON EVALUATIONS</h2>
-                        <p>Understanding what’s going on with your pup can be a tough battle. With our in-person
-                            evaluations, our trainers have the ability to meet your dog and recommend the right training
-                            program for you and your best friend.</p>
-                        <a href="#" class="themeBtn" data-toggle="modal" data-target="#exampleModalCenter">Book
-                            Evaluation</a>
+                        <h4 class="subHead">{{ $page->content['evo_title'] ?? '' }}</h4>
+                        <h2 class="mainHead">{{ $page->content['evo_heading'] ?? '' }}</h2>
+                        <p>{{ $page->content['evo_discreption'] ?? '' }}</p>
+                        <a href="#" class="themeBtn" data-toggle="modal" data-target="#exampleModalCenter">{{ $page->content['evo_btn'] ?? '' }}</a>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
                     <figure>
-                        <img src=" {{ asset('front/images/personimg.webp') }}" class="img-fluid w-100" alt="img">
+                        <img src=" {{ $page->cmsImages('evo_img') ?? '' }}" class="img-fluid w-100" alt="img">
                     </figure>
                 </div>
             </div>

@@ -18,45 +18,133 @@ class AboutPageSeeder extends Seeder
         $content = [
             'name' => 'About',
             'slug' => 'about',
-            'meta_title' => 'fine-design',
-            'meta_description' => 'fine-design',
-            'background_banner_image' => 'front/images/mainBnnr.webp',
-            'about_sec_rig_img' => 'front/images/aboutimg6.webp',
-            'about_sec_img_2' => '',
+            'meta_title' => 'crystal-coast-canine-training',
+            'meta_description' => 'crystal-coast-canine-training',
+            'background_banner_image' => 'front/images/innerbnr1.webp',
+            'about_sec_story_img_1' => 'front/images/about-inner1.webp',
+            'about_sec_story_img_2' => 'front/images/about-inner2.webp',
+            'about_sec_story_img_3' => 'front/images/about-inner3.webp',
+            'about_sec_des_img_1' => 'front/images/discount-img2.webp',
+            'about_sec_des_img_2' => 'front/images/discount-img1.webp',
+            'about_sec_des_img_3' => 'front/images/blog2.webp',
+            'about_sec_hepl_img_1' => 'front/images/personimg2.webp',
+            'about_sec_soc_img_1' => 'front/images/icon1.webp',
+            'about_sec_soc_img_2' => 'front/images/icon2.webp',
+
             'content' => json_encode([
-                'about_banner_title' => "About Me",
-                'home_about_sec_heading' => 'Meet Susan…',
-                'about_sec_des' => "Susan Ekizian became an interior designer over 20 years ago, inspired by the excitement she felt in transforming homes, giving each one its own personality. She expanded into real estate investment after 10 years, leveraging the synergy of design to accelerate investment returns for clients and partners. Susan has a gift for spotting potential, utilizing her expertise to tap into trends and demand in targeted markets to deliver investor returns and beautiful living spaces for clients and their families.
-Susan’s design influences started during college when she transitioned from foreign languages and psychology and into design. This led to a move to Italy, embracing immersive local living that accelerated her interest and study of textiles, architecture and history. This experience and a life-long passion for travel has led Susan to integrate style influences from Europe, Asia and Latin America. Closer to home, nature and extended hikes in diverse natural settings from the Great Smoky Mountains to the Canadian Rockies provide context for connectivity with the natural environment to enhance and transform spaces.",
-                'about_sec_heading_2' => '“When working with a client, it is so very important to get to know them. The design is meant to embrace and communicate who they are - delivering a beautiful, comfortable and welcoming environment for family and friends. It’s not at all about me. I work to bring a balance of the technical and the creative elements of design to deliver unique and personal projects for each client, often utilizing an ‘outdoors-in’ approach leveraging natural light, textiles and living plants inspired by the client and the location of the project. Design has also been a key element in my investment work, producing significantly higher investment returns, increasing the rates for rental properties and reducing the time to sale for investment properties.”
-Susan’s work has delivered strong financial returns for investors as well as personalized design projects for families - most recently in resort and lake areas. She has also worked with clients in New York, California and Chicago’s Streeterville area along Lake Michigan and surrounding suburbs.',
-                'about_sec_heading_3' => 'My Investment Journey…',
-                'about_sec_des_3' => 'It began out of necessity. I had been designing homes for clients for years. When I became a single mother, I felt a necessity to generate additional income. It started with an investment. Using all of my available cash and my design capabilities, I decided to place a huge bet on my abilities - renovating and redesigning a property to increase the value, generating a big profit. That enabled the purchase of the next property which, ultimately, became a rental property. During this time, with these humble successes together with my design work, I was introduced to my first private money lender. This led to collaboration on multiple properties, producing strong investment returns. Each success - building excitement. Each project - learning, improving and strengthening my network. With nearly $5M in property sales and investment returns with multiple partners and my own portfolio, my focus is on scale, growing partnerships and accelerating investment returns.',
+                'about_banner_title' => "ABOUT US",
+                'about_loc_heading' => 'LOCATED IN',
+                'about_loc_address' => "SURF CITY, NORTH CAROLINA",
+                'about_loc_address_com' => "Servicing Pender, New Hanover, Onslow, Jones, Craven, and Carteret Counties",
+                "about_sec_title1" => "OWNER/ HEAD TRAINER",
+                "about_sec_head1" => "ELIZABETH",
+                "about_sec_des1" => "Elizabeth is the owner of Crystal Coast Canine Training, LLC. She served in the U.S. Marine Corps and fell in love with Malinois and Dutch Shepherd. After having three Mals and a Dutch Shepherd she became passionate about training and breeding dogs to become high-functioning members of society.  She has worked with dogs for several years and continues to learn and grow. She believes that the most important aspect of dog training is communication. Over the years she has been to numerous training seminars and courses and conducted extensive research through multiple avenues to become the best balanced trainer she can be. She has learned many different approaches to training from some of the brightest minds in dog training and believes that not all dogs learn the same way. This belief has encouraged her to have a continuously evolving training program tailored to each and every dog",
+                "about_sec_heading_2" => "HOW WE TRAIN OUR DOGS",
+                "about_sec_des_2" => "Each dog comes from a different background.  Breed and age play an important role in how your dog will learn. Where one dog may excel, another may struggle. This is why we conduct in-person evaluations for each client prior to drop off. We ask specific questions about your dog and their environment. If you have children, we may conduct more training around young individuals, whereas, if you do not and you frequent sporting events, training may be focussed around that setting. When we first meet, it is important to share all pertinent information, so we may provide the best customized training for your dog.",
+                "about_sec_desc_3" => "<h3>BREEDING</h3>
+
+<p>HOW WE RAISE OUR PUPPIES</p>
+
+<p>All of our dogs are raised in a healthy and loving atmosphere. Each is worked and played with daily and fed high-quality food. We have a young teen and a toddler so every puppy grows up with children and is exposed to different animals and sounds. At the age of two weeks, (once they&#39;re standing and have open eyes) the pups are litter box trained and exposed to nervous system training.</p>
+
+<p>OUR PROCESS</p>
+
+<p>Once each puppy turns one month old they are introduced to different training environments. Simply put, we will begin placing them in situations they will encounter once they go to their new homes. Car rides, loud noises, bathing, potty training, leash walking, and meal time manners. When you take your pup home we want it to be the least stressful experience possible.</p>
+
+<p>WHAT WE FEED OUR PUPS</p>
+
+<p>From the age of 3 weeks to 6 months we feed Purina Pro Plan Puppy Under 1 Year. This provides the needed nutrients for a growing puppy. This is a higher Protein food for active breeds like Dutch Shepherd and Belgian Malinois.</p>
+",
+                "about_sec_des_head_1" => "For Multiple dogs",
+                "about_sec_des_des_1" => "This discount may be applied when any client has multiple dogs living in the same home.
+                                For each additional dog after the first, there will be a 20% discount applied. This
+                                discount may be applied to any training package.",
+                "about_sec_des_off1" => "20%",
+                "about_sec_des_head2" => "to active duty military, veterans, law enforcement, and first responders",
+                "about_sec_des_des2" => "This discount may be applied to any puppy sale or training. Proof of service or employment must be provided for a discount to be applied.",
+                "about_sec_des_off2" => "15%",
+                "about_sec_des_head3" => "to seniors over 60 years old",
+                "about_sec_des_desc3" => " This discount may be applied to any training package.",
+                "about_sec_des_off3" => "10%",
+                "about_sec_help_head" => "HELP OUR CAUSE",
+                "about_sec_help_des" => "Crystal Coast Canine Training is a veteran-owned and operated dog training and breeding organization. We cater to Veterans and their families. We know the struggle of life after the Military. A service dog can be extremely beneficial to and even save the life of a Veteran. Any time we have donations, the funds go toward training a service dog for a veteran in need.",
+                "about_sec_help_btn" => "Donate Now",
+                "about_sec_soc_head" => "FOLLOW ON SOCIAL MEDIA",
+                
+                "about_sec_des_title"=>'discounts'
             ])
         ];
 
         $aboutData = collect($content)->except(
             'background_banner_image',
-            'about_sec_rig_img',
-            'about_sec_img_2',
+            'about_sec_story_img_1',
+            'about_sec_story_img_2',
+            'about_sec_story_img_3',
+            'about_sec_des_img_1',
+            'about_sec_des_img_2',
+            'about_sec_des_img_3',
+            'about_sec_hepl_img_1',
+            'about_sec_soc_img_1',
+            'about_sec_soc_img_2',
+
+
         )->all();
         $page = CMSPages::create($aboutData);
 
         $page->clearMediaCollection('background_banner_image');
-        $page->clearMediaCollection('about_sec_rig_img');
-        $page->clearMediaCollection('about_sec_img_2');
+        $page->clearMediaCollection('about_sec_story_img_1');
+        $page->clearMediaCollection('about_sec_story_img_2');
+        $page->clearMediaCollection('about_sec_story_img_3');
+        $page->clearMediaCollection('about_sec_des_img_1');
+        $page->clearMediaCollection('about_sec_des_img_2');
+        $page->clearMediaCollection('about_sec_des_img_3');
+        $page->clearMediaCollection('about_sec_hepl_img_1');
+        $page->clearMediaCollection('about_sec_soc_img_1');
+        $page->clearMediaCollection('about_sec_soc_img_2');
 
         $background_banner_image = public_path($content['background_banner_image']);
         if (file_exists($background_banner_image))
             $page->copyMedia($background_banner_image)->toMediaCollection('background_banner_image');
 
-        $about_right_image = public_path($content['about_sec_rig_img']);
+        $about_right_image = public_path($content['about_sec_story_img_1']);
         if (file_exists($about_right_image))
-            $page->copyMedia($about_right_image)->toMediaCollection('about_sec_rig_img');
+            $page->copyMedia($about_right_image)->toMediaCollection('about_sec_story_img_1');
 
-        $about_image_2 = public_path($content['about_sec_img_2']);
+        $about_image_2 = public_path($content['about_sec_story_img_2']);
         if (file_exists($about_image_2))
-            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_img_2');
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_story_img_2');
+
+        $about_image_2 = public_path($content['about_sec_story_img_3']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_story_img_3');
+
+
+        $about_image_2 = public_path($content['about_sec_des_img_1']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_des_img_1');
+
+
+        $about_image_2 = public_path($content['about_sec_des_img_2']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_des_img_2');
+
+        $about_image_2 = public_path($content['about_sec_des_img_3']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_des_img_3');
+
+
+        $about_image_2 = public_path($content['about_sec_hepl_img_1']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_hepl_img_1');
+
+        $about_image_2 = public_path($content['about_sec_soc_img_1']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_soc_img_1');
+
+        $about_image_2 = public_path($content['about_sec_soc_img_2']);
+        if (file_exists($about_image_2))
+            $page->copyMedia($about_image_2)->toMediaCollection('about_sec_soc_img_2');
+
 
     }
 }

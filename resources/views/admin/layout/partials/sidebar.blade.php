@@ -25,10 +25,12 @@
                                 href="{{ route('admin.pages.edit', ['slug' => 'about']) }}">About</a></li>
                         <li class="{{ request()->is('admin/cms/pages/contact/edit') ? 'active-nav' : '' }}"><a
                                 href="{{ route('admin.pages.edit', ['slug' => 'contact']) }}">Contact</a></li>
-                        <li class="{{ request()->is('admin/cms/pages/my-work/edit') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.pages.edit', ['slug' => 'my-work']) }}">My Work</a></li>
-                        <li class="{{ request()->is('admin/cms/pages/what-i-do/edit') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.pages.edit', ['slug' => 'what-i-do']) }}">What I DO</a></li>
+                        <li class="{{ request()->is('admin/cms/pages/graduate/edit') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.pages.edit', ['slug' => 'graduate']) }}">Graduates</a></li>
+                        <li class="{{ request()->is('admin/cms/pages/faq/edit') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.pages.edit', ['slug' => 'faq']) }}">Faq</a></li>
+                        <li class="{{ request()->is('admin/cms/pages/blog/edit') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.pages.edit', ['slug' => 'blog']) }}">Blog And Article</a></li>
                     </ul>
 
                 </li>

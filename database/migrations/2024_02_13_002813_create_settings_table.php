@@ -17,14 +17,13 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->text('header_logo')->nullable();
             $table->text('footer_logo')->nullable();
-            $table->text('fav_image')->nullable();
             $table->string('phone_no')->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();
             $table->string('social_link_1')->nullable();
             $table->string('social_link_2')->nullable();
             $table->string('social_link_3')->nullable();
-            $table->string('social_link_4')->nullable();
+            $table->string('footer_bottom_text')->nullable();
             $table->timestamps();
         });
     }

@@ -3,12 +3,12 @@
 
     <!-- Begin: Main Slider -->
     <div class="innerBan">
-        <img src="front/images/innerbnr1.webp" class="w-100" alt="">
+        <img src="{{ $page->cmsImages('background_banner_image') ?? '' }}" class="w-100" alt="">
         <div class="overlay">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <h2>FAQ's</h2>
+                        <h2>{{ $page->content['banner_heading'] ?? '' }}</h2>
                     </div>
                 </div>
             </div>
@@ -21,8 +21,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="faqHeading">
-                        <h2 class="mainHead">frequently asked questions</h2>
-                        <p>Please reach us at if you cannot find an answer to your question.</p>
+                        <h2 class="mainHead">{{ $page->content['st_heading'] ?? '' }}</h2>
+                        <p>{{ $page->content['st_des'] ?? '' }}</p>
                     </div>
                     <div id="accordion">
                         <div class="card">

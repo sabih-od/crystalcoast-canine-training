@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(HomePageSeeder::class);
         $this->call(AboutPageSeeder::class);
         $this->call(ContactPageSeeder::class);
-        $this->call(FooterSeeder::class);
         $this->call(SettingSeeder::class);
+        $this->call(GraduatePageSeeder::class);
+        $this->call(FaqPageSeeder::class);
+        $this->call(BlogPageSeeder::class);
     }
 }

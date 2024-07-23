@@ -42,7 +42,7 @@
                             <!-- </div> -->
                             <li class="nav-item mx-auto">
                                 <a class="nav-link centerLogo" href="{{ route('front.home') }}"><img
-                                        src="{{ asset('front/images/logo.webp') }}" class="img-fluid"
+                                        src="{{ $settings->settingImage('header_logo') ?? ''  }}" class="img-fluid"
                                         alt="img"></a>
                             </li>
                             <!-- <div class="right"> -->

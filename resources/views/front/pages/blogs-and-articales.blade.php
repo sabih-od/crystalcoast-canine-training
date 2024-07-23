@@ -2,12 +2,12 @@
 @section('content')
  <!-- Begin: Main Slider -->
  <div class="innerBan">
-    <img src="front/images/innerbnr1.webp" class="w-100" alt="">
+    <img src="{{ $page->cmsImages('background_banner_image') ?? '' }}" class="w-100" alt="">
     <div class="overlay">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <h2>Blogs and articles</h2>
+                    <h2>{{ $page->content['banner_heading'] ?? '' }}</h2>
                 </div>
             </div>
         </div>

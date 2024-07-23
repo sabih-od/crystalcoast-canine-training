@@ -88,12 +88,16 @@ class CMSPagesService
                 return view('admin.pages.cms.contact', compact('content', 'page', 'slug'));
                 break;
 
-            case 'my-work':
-                return view('admin.pages.cms.my-work', compact('content', 'page', 'slug'));
+            case 'graduate':
+                return view('admin.pages.cms.graduate', compact('content', 'page', 'slug'));
                 break;
 
-            case 'what-i-do':
-                return view('admin.pages.cms.what-i-do', compact('content', 'page', 'slug'));
+            case 'faq':
+                return view('admin.pages.cms.faq', compact('content', 'page', 'slug'));
+                break;
+
+            case 'blog':
+                return view('admin.pages.cms.blog', compact('content', 'page', 'slug'));
                 break;
 
             default:
