@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="email">Footer Bottom Text</label>
-                                            <input type="text" name="email" id="email" class="form-control"
+                                            <input type="text" name="footer_bottom_text" id="email" class="form-control"
                                                    value="{{ $setting->footer_bottom_text ?? ''}}">
                                         </div>
 
