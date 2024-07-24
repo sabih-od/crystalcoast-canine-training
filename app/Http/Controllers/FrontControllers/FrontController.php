@@ -8,6 +8,7 @@ use App\Http\Requests\ContactRequest;
 use App\Models\Blog;
 use App\Models\CMSPages;
 use App\Models\Contact;
+use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Services\Admin\CMSPagesService;
 use App\Services\User\UserService;
@@ -58,9 +59,10 @@ class FrontController extends Controller
    public function faq()
    {
        $page = $this->cmsPagesService->getPageBySlug('faq');
+       $faqs = Faq::get();
       return view(
          'front.pages.faq'
-          ,compact('page')
+          ,compact('page','faqs')
       );
    }
 
