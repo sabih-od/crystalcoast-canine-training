@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Order\OrderDetailController;
 use App\Http\Controllers\Admin\Order\OrderReturnController;
 use App\Http\Controllers\Admin\CMSPagesController;
-
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\Auth\RegisterController as UserRegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController as UserForgotPasswordController;
@@ -105,6 +105,15 @@ Route::prefix('admin')->group(function () {
         //      Admin Settings Crud
         Route::get('/settings/edit/{setting}', [SettingController::class, 'show'])->name('admin.settings.edit');
         Route::put('/settings/{setting}/update', [SettingController::class, 'update'])->name('admin.setting.update');
+
+
+        //      Admin Faq Crud
+        Route::get('/faqs', [FaqController::class, 'index'])->name('admin.faqs.index');
+        Route::get('/faq/create', [FaqController::class, 'create'])->name('admin.faq.create');
+        Route::post('/faq/store', [FaqController::class, 'store'])->name('admin.faq.store');
+        Route::get('/faq/{faq}/edit', [FaqController::class, 'show'])->name('admin.faq.edit');
+        Route::put('/faqs/{faq}/update', [FaqController::class, 'update'])->name('admin.faq.update');
+        Route::post('/faqs/delete/{faq}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
 
     });
 

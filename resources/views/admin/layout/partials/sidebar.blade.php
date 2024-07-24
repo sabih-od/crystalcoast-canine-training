@@ -1,5 +1,5 @@
 <!-- ========== Left Sidebar Start ========== -->
-<div class="left side-menu">
+<div class="left side-menu pt-5">
     <div class="slimscroll-menu" id="remove-scroll">
 
         <!--- Sidemenu -->
@@ -34,7 +34,20 @@
                     </ul>
 
                 </li>
+                <li class=" {{(request()->is('admin/faqs*')) ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-list"></i><span> Faqs
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ (request()->is('admin/faqs')) ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.faqs.index') }}">All Faqs</a></li>
+                        <li class="{{ (request()->is('admin/faq/create')) ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.faq.create') }}">Add Faq</a></li>
 
+                    </ul>
+
+                </li>
 
                 <li class=" {{ request()->is('admin/setting*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect select-btn"><i class="fas fa-cog"></i><span>

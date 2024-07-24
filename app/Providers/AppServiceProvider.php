@@ -7,6 +7,7 @@ use App\Services\Admin\CMSPagesService;
 use App\Services\Admin\ProductSizeService;
 use App\Services\Admin\SettingService;
 use App\Services\blog\BlogService;
+use App\Services\Admin\FaqService;
 use App\Services\Testimonial\TestimonialService;
 use App\Services\Notification\NotificationService;
 use App\Services\Order\OrderService;
@@ -36,6 +37,9 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(SettingService::class, function ($app) {
             return SettingService::getInstance();
+        });
+        $this->app->singleton(FaqService::class, function ($app) {
+            return FaqService::getInstance();
         });
     }
 
