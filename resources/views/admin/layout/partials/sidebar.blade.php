@@ -34,6 +34,7 @@
                     </ul>
 
                 </li>
+               {{-- Faqs Route --}}
                 <li class=" {{(request()->is('admin/faqs*')) ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
                             class="fas fa-list"></i><span> Faqs
@@ -48,7 +49,36 @@
                     </ul>
 
                 </li>
+{{-- Gallery Routes --}}
+<li class=" {{(request()->is('admin/graduates*')) ? '' : 'select-menu' }}">
+        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                class="fas fa-image"></i><span> Graduate Galleries
+                <span class="float-right menu-arrow select-btn "><i
+                        class="mdi mdi-chevron-right"></i></span></span></a>
+        <ul class="submenu">
+            <li class="{{ (request()->is('admin/graduates')) ? 'active-nav' : '' }}"><a
+                    href="{{ route('admin.graduates.index') }}">All Graduate Galleries</a></li>
+            <li class="{{ (request()->is('admin/graduate/create')) ? 'active-nav' : '' }}"><a
+                    href="{{ route('admin.graduate.create') }}">Add Graduate Gallerie</a></li>
 
+        </ul>
+
+    </li>
+    <li class=" {{(request()->is('admin/trainings*')) ? '' : 'select-menu' }}">
+        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                class="fas fa-image"></i><span> Training Galleries
+                <span class="float-right menu-arrow select-btn "><i
+                        class="mdi mdi-chevron-right"></i></span></span></a>
+        <ul class="submenu">
+            <li class="{{ (request()->is('admin/trainings')) ? 'active-nav' : '' }}"><a
+                    href="{{ route('admin.trainings.index') }}">All Training Galleries</a></li>
+            <li class="{{ (request()->is('admin/training/create')) ? 'active-nav' : '' }}"><a
+                    href="{{ route('admin.training.create') }}">Add Training Gallerie</a></li>
+
+        </ul>
+
+    </li>
+    {{-- Setting Route --}}
                 <li class=" {{ request()->is('admin/setting*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect select-btn"><i class="fas fa-cog"></i><span>
                             Settings <span class="float-right menu-arrow lol"><i

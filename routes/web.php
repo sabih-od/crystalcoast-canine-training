@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Account\ProfileController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\FrontControllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\Admin\Order\OrderDetailController;
 use App\Http\Controllers\Admin\Order\OrderReturnController;
 use App\Http\Controllers\Admin\CMSPagesController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\GraduateController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\Auth\RegisterController as UserRegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController as UserForgotPasswordController;
@@ -114,6 +116,20 @@ Route::prefix('admin')->group(function () {
         Route::get('/faq/{faq}/edit', [FaqController::class, 'show'])->name('admin.faq.edit');
         Route::put('/faqs/{faq}/update', [FaqController::class, 'update'])->name('admin.faq.update');
         Route::post('/faqs/delete/{faq}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
+// Gallery Cruds
+        Route::get('/graduates', [GraduateController::class, 'index'])->name('admin.graduates.index');
+        Route::get('/graduate/create', [GraduateController::class, 'create'])->name('admin.graduate.create');
+        Route::post('/graduate/store', [GraduateController::class, 'store'])->name('admin.graduate.store');
+        Route::get('/graduate/{graduate}/edit', [GraduateController::class, 'show'])->name('admin.graduate.edit');
+        Route::put('/graduates/{graduate}/update', [GraduateController::class, 'update'])->name('admin.graduate.update');
+        Route::post('/graduates/delete/{graduate}', [GraduateController::class, 'destroy'])->name('admin.graduate.destroy');
+
+        Route::get('/trainings', [TrainingController::class, 'index'])->name('admin.trainings.index');
+        Route::get('/training/create', [TrainingController::class, 'create'])->name('admin.training.create');
+        Route::post('/training/store', [TrainingController::class, 'store'])->name('admin.training.store');
+        Route::get('/training/{training}/edit', [TrainingController::class, 'show'])->name('admin.training.edit');
+        Route::put('/trainings/{training}/update', [TrainingController::class, 'update'])->name('admin.training.update');
+        Route::post('/trainings/delete/{training}', [TrainingController::class, 'destroy'])->name('admin.training.destroy');
 
     });
 

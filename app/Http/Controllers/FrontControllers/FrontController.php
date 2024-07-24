@@ -9,11 +9,14 @@ use App\Models\Blog;
 use App\Models\CMSPages;
 use App\Models\Contact;
 use App\Models\Faq;
+use App\Models\GraduateGallery;
 use App\Models\Testimonial;
+use App\Models\TrainingGallery;
 use App\Services\Admin\CMSPagesService;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class FrontController extends Controller
 {
@@ -29,10 +32,11 @@ class FrontController extends Controller
    public function index()
    {
 
-       $page = $this->cmsPagesService->getPageBySlug('home');
+      $page = $this->cmsPagesService->getPageBySlug('home');
       return view(
          'front.pages.index'
-          ,compact('page')
+         ,
+         compact('page')
       );
    }
 
@@ -58,32 +62,37 @@ class FrontController extends Controller
 
    public function faq()
    {
-       $page = $this->cmsPagesService->getPageBySlug('faq');
-       $faqs = Faq::get();
+      $page = $this->cmsPagesService->getPageBySlug('faq');
+      $faqs = Faq::get();
       return view(
          'front.pages.faq'
-          ,compact('page','faqs')
+         ,
+         compact('page', 'faqs')
       );
    }
 
 
    public function gallery()
    {
-       $page = $this->cmsPagesService->getPageBySlug('graduate');
-
+      $page = $this->cmsPagesService->getPageBySlug('graduate');
+      $trainings = TrainingGallery::get();
+      // dd($trainings);
+      $graduates = GraduateGallery::get();
       return view(
          'front.pages.gallery'
-          ,compact('page')
+         ,
+         compact('page', 'trainings', 'graduates')
       );
    }
 
    public function blogs()
    {
-       $page = $this->cmsPagesService->getPageBySlug('blog');
+      $page = $this->cmsPagesService->getPageBySlug('blog');
 
       return view(
          'front.pages.blogs-and-articales'
-          ,compact('page')
+         ,
+         compact('page')
       );
    }
 
