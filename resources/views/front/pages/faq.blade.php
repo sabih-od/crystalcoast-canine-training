@@ -1,6 +1,5 @@
 @extends('front.layout.app')
 @section('content')
-
     <!-- Begin: Main Slider -->
     <div class="innerBan">
         <img src="{{ $page->cmsImages('background_banner_image') ?? '' }}" class="w-100" alt="">
@@ -25,28 +24,26 @@
                         <p>{{ $page->content['st_des'] ?? '' }}</p>
                     </div>
                     <div id="accordion">
+                        @foreach ($faqs as $item)
                         <div class="card">
-                            <div id="headingOne ">
-                                <h5 class="mb-0 ">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne">Do you train all ages and
-                                        breeds?
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </h5>
+                          <div id="heading{{ $item->id }}">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ $item->id }}"
+                                aria-expanded="false" aria-controls="collapse{{ $item->id }}">
+                                {{ $item->title }}
+                                <i class="fas fa-plus"></i>
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapse{{ $item->id }}" class="collapse @if($loop->first) show @endif" aria-labelledby="heading{{ $item->id }}"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                              <p>{!! $item->description !!}</p>
                             </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <p>YES! We do not discriminate based on breed and as long as your dog has has their
-                                        required vaccines, he or she may participate in our training program. If you
-                                        have any questions on required vaccines, please reach out to us, so that we may
-                                        assist you.
-                                    </p>
-                                </div>
-                            </div>
+                          </div>
                         </div>
-                        <div class="card ">
+                      @endforeach
+                        {{-- <div class="card ">
                             <div id="headingTwo ">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
@@ -189,12 +186,11 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                       
+                        </div> --}}
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
