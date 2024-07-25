@@ -2,7 +2,7 @@
 <!-- HERO MAIN SECTION -->
 
 @section('content')
-<section class="mainSlider">
+    <section class="mainSlider">
         <div class="swiper-container homeSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -14,7 +14,7 @@
                                         <h2>{{ $page->content['banner_heading'] ?? '' }}</h2>
                                         <h3><span>{{ $page->content['banner_heading1'] ?? '' }}</span></h3>
 
-                                        <p>{{ $page->content['banner_para']  ?? ''}}</p>
+                                        <p>{{ $page->content['banner_para'] ?? '' }}</p>
                                         <h5>{{ $page->content['banner_heading2'] ?? '' }}</h5>
                                     </div>
                                 </div>
@@ -86,72 +86,14 @@
         <div class="container">
             <h2 class="mainHead text-center pb-4" data-aos="fade-up">are you experiencing these behaviors?</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall1.webp') }}" class="img-fluid" alt="">
-                        <h3>Aggression</h3>
+                @foreach ($behaviors as $item)
+                    <div class="col-md-4">
+                        <div class="expWrap" data-aos="fade-up">
+                            <img src="{{ $item->behaviorImage('behavior_image') }}" class="img-fluid" alt="">
+                            <h3>{{ $item->title }}</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall2.webp') }}" class="img-fluid" alt="">
-                        <h3>Jumping on you or guests</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall3.webp') }}" class="img-fluid" alt="">
-                        <h3>Excessive barking</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall4.webp') }}" class="img-fluid" alt="">
-                        <h3>Pulling on the leash</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall5.webp') }}" class="img-fluid" alt="">
-                        <h3>Counter surfing</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall6.webp') }}" class="img-fluid" alt="">
-                        <h3>Anxiety</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall10.webp') }}" class="img-fluid" alt="">
-                        <h3>Reactivity</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall11.webp') }}" class="img-fluid" alt="">
-                        <h3>Biting</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall12.webp') }}" class="img-fluid" alt="">
-                        <h3>Rough play</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall13.webp') }}" class="img-fluid" alt="">
-                        <h3>Poor manners</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="expWrap" data-aos="fade-up">
-                        <img src="{{ asset('front/images/gall14.webp') }}" class="img-fluid" alt="">
-                        <h3>Stubborn behavior</h3>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-md-12 text-center" data-aos="fade-up">
                     <a href="" class="themeBtn">View All Issues</a>
                 </div>
@@ -178,57 +120,27 @@
             <div class="abthead text-center">
                 <h2 class="mainHead mb-5" data-aos="fade-up">YOUR ONE STOP SHOP FOR <br> DOG TRAINING</h2>
             </div>
-            <div class="row align-items-center">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="aboutwrap">
-                        <figure>
-                            <img src="{{ asset('front/images/train1.webp') }}" class="img-fluid" alt="">
-                        </figure>
+            @foreach ($trainings as $index => $training)
+                <div class="row align-items-center {{ $index % 2 == 1 ? 'flex-row-reverse' : '' }}">
+                    <div class="col-md-{{ $index % 2 == 1 ? '7' : '6' }}"
+                        data-aos="{{ $index % 2 == 1 ? 'fade-left' : 'fade-right' }}">
+                        <div class="aboutwrap">
+                            <figure>
+                                <img src="{{ $training->trainingImage('training_image') }}" class="img-fluid"
+                                    alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-{{ $index % 2 == 1 ? '5' : '6' }}"
+                        data-aos="{{ $index % 2 == 1 ? 'fade-right' : 'fade-left' }}">
+                        <div class="aboutcntnt {{ $index % 2 == 1 ? 'abutleft' : '' }}">
+                            <h3>{{ $training->title }}</h3>
+                            <p>{{ $training->description }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="aboutcntnt">
-                        <h3>Basic Obedience</h3>
-                        <p>Teach your dog basic commands like sit, stay, come, off, no, and heel with our obedience
-                            training programs. Our expert trainers use balanced training techniques to make learning
-                            interactive for your dog.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center flex-row-reverse">
-                <div class="col-md-7" data-aos="fade-left">
-                    <div class="aboutwrap ">
-                        <figure>
-                            <img src="{{ asset('front/images/train2.webp') }}" class="img-fluid" alt="">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-md-5" data-aos="fade-right">
-                    <div class="aboutcntnt abutleft">
-                        <h3>Advanced Obedience</h3>
-                        <p>Take your dog's obedience skills to the next level with our advanced obedience training
-                            programs. Our trainers can teach your dog more complex commands and behaviors, such as
-                            off-leash training and recall.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="aboutwrap">
-                        <figure>
-                            <img src="{{ asset('front/images/train3.webp') }}" class="img-fluid" alt="">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="aboutcntnt">
-                        <h3>Behavior Modification</h3>
-                        <p>Does your dog have problem behaviors like jumping, barking, or digging? Our behavior
-                            modification programs can help address these issues and teach your dog more appropriate
-                            behaviors.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
 
         </div>
     </section>
@@ -244,7 +156,8 @@
                         <div class="lawText">
                             <h2 class="mainHead text-white">{{ $page->content['dis_heading'] ?? '' }}</h2>
                             <div class="discoundCard">
-                                <h4><span>{{ $page->content['dis_cir_heading'] ?? '' }}</span>{{ $page->content['dis_cir_per'] ?? '' }}</h4>
+                                <h4><span>{{ $page->content['dis_cir_heading'] ?? '' }}</span>{{ $page->content['dis_cir_per'] ?? '' }}
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -257,7 +170,8 @@
                         <div class="lawText">
                             <h2 class="mainHead text-white">{{ $page->content['dis_heading_1'] ?? '' }}</h2>
                             <div class="discoundCard">
-                                <h4><span>{{ $page->content['dis_cir_heading_1'] ?? '' }}</span>{{ $page->content['dis_cir_per_1'] }}</h4>
+                                <h4><span>{{ $page->content['dis_cir_heading_1'] ?? '' }}</span>{{ $page->content['dis_cir_per_1'] }}
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -495,7 +409,8 @@
                         <h4 class="subHead">{{ $page->content['evo_title'] ?? '' }}</h4>
                         <h2 class="mainHead">{{ $page->content['evo_heading'] ?? '' }}</h2>
                         <p>{{ $page->content['evo_discreption'] ?? '' }}</p>
-                        <a href="#" class="themeBtn" data-toggle="modal" data-target="#exampleModalCenter">{{ $page->content['evo_btn'] ?? '' }}</a>
+                        <a href="#" class="themeBtn" data-toggle="modal"
+                            data-target="#exampleModalCenter">{{ $page->content['evo_btn'] ?? '' }}</a>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">

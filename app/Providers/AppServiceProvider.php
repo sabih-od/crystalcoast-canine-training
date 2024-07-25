@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Admin\BehaviorService;
 use App\Services\Admin\CategoryService;
 use App\Services\Admin\CMSPagesService;
 use App\Services\Admin\ProductSizeService;
@@ -9,6 +10,7 @@ use App\Services\Admin\SettingService;
 use App\Services\Admin\BlogService;
 use App\Services\Admin\FaqService;
 use App\Services\Admin\GraduateService;
+use App\Services\Admin\TrainingContentService;
 use App\Services\Admin\TrainingService;
 use App\Services\Testimonial\TestimonialService;
 use App\Services\Notification\NotificationService;
@@ -52,6 +54,14 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(BlogService::class, function ($app) {
             return BlogService::getInstance();
+        });
+
+        $this->app->singleton(BehaviorService::class, function ($app) {
+            return BehaviorService::getInstance();
+        });
+
+        $this->app->singleton(TrainingContentService::class, function ($app) {
+            return TrainingContentService::getInstance();
         });
     }
 

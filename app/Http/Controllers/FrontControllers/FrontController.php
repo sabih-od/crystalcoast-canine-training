@@ -5,12 +5,14 @@ namespace App\Http\Controllers\FrontControllers;
 use App\Helpers\WebResponses;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
+use App\Models\Behavior;
 use App\Models\Blog;
 use App\Models\CMSPages;
 use App\Models\Contact;
 use App\Models\Faq;
 use App\Models\GraduateGallery;
 use App\Models\Testimonial;
+use App\Models\Training;
 use App\Models\TrainingGallery;
 use App\Services\Admin\CMSPagesService;
 use App\Services\User\UserService;
@@ -33,10 +35,12 @@ class FrontController extends Controller
    {
 
       $page = $this->cmsPagesService->getPageBySlug('home');
+      $trainings = Training::get();
+      $behaviors = Behavior::get();
       return view(
          'front.pages.index'
          ,
-         compact('page')
+         compact('page', 'trainings', 'behaviors')
       );
    }
 

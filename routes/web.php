@@ -16,13 +16,14 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\AuthController as AdminLoginController;
 
 use App\Http\Controllers\Admin\AdminWalletController;
-
+use App\Http\Controllers\Admin\BehaviorController;
 use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Order\OrderDetailController;
 use App\Http\Controllers\Admin\Order\OrderReturnController;
 use App\Http\Controllers\Admin\CMSPagesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GraduateController;
+use App\Http\Controllers\Admin\TrainingContentController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\Auth\RegisterController as UserRegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController as UserForgotPasswordController;
@@ -118,7 +119,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/faq/{faq}/edit', [FaqController::class, 'show'])->name('admin.faq.edit');
         Route::put('/faqs/{faq}/update', [FaqController::class, 'update'])->name('admin.faq.update');
         Route::post('/faqs/delete/{faq}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
-// Gallery Cruds
+        // Gallery Cruds
         Route::get('/graduates', [GraduateController::class, 'index'])->name('admin.graduates.index');
         Route::get('/graduate/create', [GraduateController::class, 'create'])->name('admin.graduate.create');
         Route::post('/graduate/store', [GraduateController::class, 'store'])->name('admin.graduate.store');
@@ -140,6 +141,22 @@ Route::prefix('admin')->group(function () {
         Route::get('/blog/{blog}/edit', [BlogController::class, 'show'])->name('admin.blog.edit');
         Route::put('/blog/{blog}/update', [BlogController::class, 'update'])->name('admin.blog.update');
         Route::post('/blog/delete/{blog}', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
+
+        // taining contents
+        Route::get('/taining-contents', [TrainingContentController::class, 'index'])->name('admin.trainingContents.index');
+        Route::get('/taining-content/create', [TrainingContentController::class, 'create'])->name('admin.trainingContent.create');
+        Route::post('/taining-content/store', [TrainingContentController::class, 'store'])->name('admin.trainingContent.store');
+        Route::get('/taining-content/{training}/edit', [TrainingContentController::class, 'show'])->name('admin.trainingContent.edit');
+        Route::put('/taining-content/{training}/update', [TrainingContentController::class, 'update'])->name('admin.trainingContent.update');
+        Route::post('/taining-content/delete/{training}', [TrainingContentController::class, 'destroy'])->name('admin.trainingContent.destroy');
+
+        // behavior contents
+        Route::get('/behaviors', [BehaviorController::class, 'index'])->name('admin.behaviors.index');
+        Route::get('/behavior/create', [BehaviorController::class, 'create'])->name('admin.behavior.create');
+        Route::post('/behavior/store', [BehaviorController::class, 'store'])->name('admin.behavior.store');
+        Route::get('/behavior/{behavior}/edit', [BehaviorController::class, 'show'])->name('admin.behavior.edit');
+        Route::put('/behavior/{behavior}/update', [BehaviorController::class, 'update'])->name('admin.behavior.update');
+        Route::post('/behavior/delete/{behavior}', [BehaviorController::class, 'destroy'])->name('admin.behavior.destroy');
 
 
     });
