@@ -37,7 +37,7 @@
         <!-- content -->
 
         <footer class="footer">
-            © 2024 Fine-Design <span class="d-none d-sm-inline-block"> - Copyright reserved. </span>.
+            © 2024 Crystal Coast Canine Training <span class="d-none d-sm-inline-block"> - Copyright reserved. </span>.
         </footer>
 
     </div>

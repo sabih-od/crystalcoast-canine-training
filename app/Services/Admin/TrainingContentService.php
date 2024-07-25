@@ -2,36 +2,36 @@
 
 namespace App\Services\Admin;
 
-use App\Models\TrainingGallery;
+use App\Models\Training;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
-class TrainingService
+class TrainingContentService
 {
     private static $instance;
-    private $trainingModel;
+    private $trainingContentModel;
     private function __construct()
     {
-        $this->trainingModel = new TrainingGallery();
+        $this->trainingContentModel = new Training();
     }
 
     public static function getInstance()
     {
         if (!self::$instance) {
-            self::$instance = new TrainingService();
+            self::$instance = new TrainingContentService();
         }
         return self::$instance;
     }
 
 
-    public function getAllTrainings($limit = null)
+    public function getAllTrainingContents($limit = null)
     {
         try {
             if ($limit != null) {
-                return $this->trainingModel->orderBy('created_at', 'desc')->limit($limit)->get();
+                return $this->trainingContentModel->orderBy('created_at', 'desc')->limit($limit)->get();
             }
-            return $this->trainingModel->orderBy('created_at', 'desc')->get();
+            return $this->trainingContentModel->orderBy('created_at', 'desc')->get();
         } catch (\Exception $e) {
             return $e;
         }
@@ -40,8 +40,8 @@ class TrainingService
 
     public function datatable()
     {
-        $trainings = $this->getAllTrainings();
-        return DataTables::of($trainings)
+        $TrainingContents = $this->getAllTrainingContents();
+        return DataTables::of($TrainingContents)
             ->addColumn('created_by', function ($data) {
                 return $data->user ? $data->user->name : " ";
             })
@@ -58,14 +58,11 @@ class TrainingService
 
 
     public
-        function deleteTraining(
-        $trainging
+        function deleteTrainingContent(
+        $TrainingContent
     ) {
         try {
-            if (Storage::disk('public')->exists($trainging->image)) {
-                Storage::disk('public')->delete($trainging->image);
-                $trainging->delete();
-            }
+            $TrainingContent->delete();
             return true;
 
         } catch (\Exception $exception) {
@@ -73,18 +70,15 @@ class TrainingService
         }
     }
 
-    public function createTraining($request)
+    public function createTrainingContent($trainingContentData)
     {
         try {
-            $traingingData = $request->file('image')->store('training', 'public');
-
             DB::beginTransaction();
-            $training = $this->trainingModel->create([
-                'image' => $traingingData, // Adjust this according to your model's fillable fields
-            ]);
-            DB::commit();
-            return $training;
 
+            $trainingContent = $this->trainingContentModel->create($trainingContentData);
+            $trainingContent->addMedia($trainingContentData['image'])->toMediaCollection('training_img');
+            DB::commit();
+            return $trainingContent;
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
@@ -92,51 +86,53 @@ class TrainingService
     }
 
 
-    public function updateTraining($training, $request)
+    public function updateTrainingContent($trainingContent, $trainingContentData)
     {
 
         try {
-            if ($training) {
-                if (Storage::disk('public')->exists($training->image)) {
-                    Storage::disk('public')->delete($training->image);
+            if ($trainingContent) {
+                $trainingContent->update($trainingContentData);
 
+                if (!empty($trainingContentData['image'])) {
+                    $trainingContent->clearMediaCollection('training_img');
+                    $trainingContent->addMedia($trainingContentData['image'])->toMediaCollection('training_img');
                 }
-                $trainingData = $request->file('image')->store('training', 'public');
-
-                $training->update([
-                    'image' => $trainingData,
-                ]);
 
             } else {
-                throw new \Exception("Training Not Found");
+                throw new \Exception("TrainingContent Not Found");
             }
         } catch (\Exception $e) {
             return $e->getMessage();
         }
     }
     public
-        function trainingIndexView(
+        function trainingContentIndexView(
     ) {
         return 'admin.pages.training-contents.index';
     }
 
     public
-        function trainingCreateView(
+        function trainingContentCreateView(
     ) {
 
         return 'admin.pages.training-contents.create';
     }
 
     public
-        function trainingEditView(
+        function trainingContentEditView(
     ) {
 
         return 'admin.pages.training-contents.edit';
     }
 
     public
-        function trainingReturnRoute(
+        function trainingContentReturnRoute(
     ) {
-        return 'admin.training-contents.index';
+        return 'admin.trainingContents.index';
+    }
+
+    public function getTrainingContent($trainingContentId)
+    {
+        return $this->trainingContentModel->with('media')->find($trainingContentId);
     }
 }
