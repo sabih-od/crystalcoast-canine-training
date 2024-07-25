@@ -37,7 +37,7 @@
                 {{-- Faqs Route --}}
                 <li class=" {{ request()->is('admin/faqs*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                            class="fas fa-list"></i><span> Faqs
+                            class="fas fa-question-circle"></i><span> Faqs
                             <span class="float-right menu-arrow select-btn "><i
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
@@ -96,7 +96,7 @@
 
                 <li class=" {{ request()->is('admin/taining-contents*') ? '' : 'select-menu' }}">
                         <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-blog"></i><span> Trainings
+                                class="fas fa-award"></i><span> Trainings
                                 <span class="float-right menu-arrow select-btn "><i
                                         class="mdi mdi-chevron-right"></i></span></span></a>
                         <ul class="submenu">
@@ -112,7 +112,7 @@
 
                     <li class=" {{ request()->is('admin/behaviors*') ? '' : 'select-menu' }}">
                         <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-blog"></i><span> Behaviors
+                                class="fas fa-atom"></i><span> Behaviors
                                 <span class="float-right menu-arrow select-btn "><i
                                         class="mdi mdi-chevron-right"></i></span></span></a>
                         <ul class="submenu">

@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-12" data-aos="fade-up">
                     <div class="blog-card">
-                        <h5 class="subText">August 8, 2023 | {{ $blog->title }}</h5>
+                        <h5 class="subText">{{ \Carbon\Carbon::parse($blog->created_at)->format('F j, Y') }} | {{ $blog->title }}</h5>
                         <h4 class="title">{{ $blog->heading }}</h4>
                         <img src="{{ $blog->blogImage() }}" alt="image" class="img-fluid">
                         {!! $blog->short_description !!}

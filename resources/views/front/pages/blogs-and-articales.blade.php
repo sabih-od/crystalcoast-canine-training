@@ -22,7 +22,7 @@
                     <div class="col-md-6" data-aos="fade-up">
                         <div class="blog-card">
                             <img src="{{ $item->blogImage('blog_image') }}" alt="image" class="img-fluid">
-                            <h5 class="subText">March 6, 2024 |
+                            <h5 class="subText">{{ \Carbon\Carbon::parse($item->created_at)->format('F j, Y') }} |
                                 {{ $item->title ?? '' }}
                                 {{-- Behavior --}}
                             </h5>

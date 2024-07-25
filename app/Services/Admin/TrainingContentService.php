@@ -37,6 +37,10 @@ class TrainingContentService
         }
     }
 
+    public function trainingImage()
+    {
+        return $this->trainingContentModel->getMedia('training_img')->first() ? $this->trainingContentModel->getMedia('training_img')->first()->getUrl() : asset('images/No-Image.png');
+    }
 
     public function datatable()
     {
@@ -44,6 +48,9 @@ class TrainingContentService
         return DataTables::of($TrainingContents)
             ->addColumn('created_by', function ($data) {
                 return $data->user ? $data->user->name : " ";
+            })
+            ->addColumn('image', function ($data) {
+                return $data->trainingImage();
             })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.trainingContent.edit', ['training' => $data->id]);

@@ -37,13 +37,19 @@ class BehaviorService
         }
     }
 
-
+    public function behaviorImage()
+    {
+        return $this->behaviorModel->getMedia('behavior_img')->first() ? $this->behaviorModel->getMedia('behavior_img')->first()->getUrl() : asset('images/No-Image.png');
+    }
     public function datatable()
     {
         $behaviors = $this->getAllbehaviors();
         return DataTables::of($behaviors)
             ->addColumn('created_by', function ($data) {
                 return $data->user ? $data->user->name : " ";
+            })
+            ->addColumn('image', function ($data) {
+                return $data->behaviorImage();
             })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.behavior.edit', ['behavior' => $data->id]);

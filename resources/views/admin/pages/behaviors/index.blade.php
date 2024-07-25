@@ -22,6 +22,7 @@
                                 <thead>
                                     <tr>
                                         <th>Title</th>
+                                        <th>Image</th>
                                         <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,6 +49,13 @@
         var columnsConfig = [{
                 data: 'title',
                 name: 'Title'
+            },
+            {
+                data: 'image',
+                name: 'Image',
+                render: function(data, type, full, meta) {
+                    return `<img src="${data}" alt="Gallery Image" style="max-width: 200px; max-height: 100px;">`;
+                }
             },
             {
                 data: 'created_at',

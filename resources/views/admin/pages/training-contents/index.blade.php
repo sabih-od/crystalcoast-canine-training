@@ -1,6 +1,6 @@
 @extends('admin.layout.admin')
 <style>
-    table.dataTable.nowrap td{
+    table.dataTable.nowrap td {
         white-space: normal !important;
     }
 </style>
@@ -27,6 +27,7 @@
                                 <thead>
                                     <tr>
                                         <th>Title</th>
+                                        <th>Image</th>
                                         <th>Description</th>
                                         <th>Created at</th>
                                         <th>Action</th>
@@ -51,15 +52,22 @@
 
         var moduleName = '{{ request()->segment(2) }}'; //for main.js
 
-        var columnsConfig = [
-            {
+        var columnsConfig = [{
                 data: 'title',
                 name: 'Title'
+            },
+            {
+                data: 'image',
+                name: 'Image',
+                render: function(data, type, full, meta) {
+                    return `<img src="${data}" alt="Gallery Image" style="max-width: 200px; max-height: 100px;">`;
+                }
             },
             {
                 data: 'description',
                 name: 'Description'
             },
+
             {
                 data: 'created_at',
                 name: 'created_at'
@@ -75,7 +83,8 @@
             $('#confirmModal').modal('show');
             $('#ok_delete').click(function() {
                 $.ajax({
-                    url: '{{ route('admin.trainingContent.destroy', ['training' => ':id']) }}'.replace(':id',
+                    url: '{{ route('admin.trainingContent.destroy', ['training' => ':id']) }}'.replace(
+                        ':id',
                         trainingId),
                     type: 'POST',
                     data: {
