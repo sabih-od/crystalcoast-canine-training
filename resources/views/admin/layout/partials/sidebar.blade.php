@@ -34,51 +34,66 @@
                     </ul>
 
                 </li>
-               {{-- Faqs Route --}}
-                <li class=" {{(request()->is('admin/faqs*')) ? '' : 'select-menu' }}">
+                {{-- Faqs Route --}}
+                <li class=" {{ request()->is('admin/faqs*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
                             class="fas fa-list"></i><span> Faqs
                             <span class="float-right menu-arrow select-btn "><i
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
-                        <li class="{{ (request()->is('admin/faqs')) ? 'active-nav' : '' }}"><a
+                        <li class="{{ request()->is('admin/faqs') ? 'active-nav' : '' }}"><a
                                 href="{{ route('admin.faqs.index') }}">All Faqs</a></li>
-                        <li class="{{ (request()->is('admin/faq/create')) ? 'active-nav' : '' }}"><a
+                        <li class="{{ request()->is('admin/faq/create') ? 'active-nav' : '' }}"><a
                                 href="{{ route('admin.faq.create') }}">Add Faq</a></li>
 
                     </ul>
 
                 </li>
-{{-- Gallery Routes --}}
-<li class=" {{(request()->is('admin/graduates*')) ? '' : 'select-menu' }}">
-        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                class="fas fa-image"></i><span> Graduate Galleries
-                <span class="float-right menu-arrow select-btn "><i
-                        class="mdi mdi-chevron-right"></i></span></span></a>
-        <ul class="submenu">
-            <li class="{{ (request()->is('admin/graduates')) ? 'active-nav' : '' }}"><a
-                    href="{{ route('admin.graduates.index') }}">All Graduate Galleries</a></li>
-            <li class="{{ (request()->is('admin/graduate/create')) ? 'active-nav' : '' }}"><a
-                    href="{{ route('admin.graduate.create') }}">Add Graduate Gallerie</a></li>
+                {{-- Gallery Routes --}}
+                <li class=" {{ request()->is('admin/graduates*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-image"></i><span> Graduate Galleries
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/graduates') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.graduates.index') }}">All Graduate Galleries</a></li>
+                        <li class="{{ request()->is('admin/graduate/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.graduate.create') }}">Add Graduate Gallerie</a></li>
 
-        </ul>
+                    </ul>
 
-    </li>
-    <li class=" {{(request()->is('admin/trainings*')) ? '' : 'select-menu' }}">
-        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                class="fas fa-image"></i><span> Training Galleries
-                <span class="float-right menu-arrow select-btn "><i
-                        class="mdi mdi-chevron-right"></i></span></span></a>
-        <ul class="submenu">
-            <li class="{{ (request()->is('admin/trainings')) ? 'active-nav' : '' }}"><a
-                    href="{{ route('admin.trainings.index') }}">All Training Galleries</a></li>
-            <li class="{{ (request()->is('admin/training/create')) ? 'active-nav' : '' }}"><a
-                    href="{{ route('admin.training.create') }}">Add Training Gallerie</a></li>
+                </li>
+                <li class=" {{ request()->is('admin/trainings*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-image"></i><span> Training Galleries
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/trainings') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.trainings.index') }}">All Training Galleries</a></li>
+                        <li class="{{ request()->is('admin/training/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.training.create') }}">Add Training Gallerie</a></li>
 
-        </ul>
+                    </ul>
 
-    </li>
-    {{-- Setting Route --}}
+                </li>
+
+                <li class=" {{ request()->is('admin/blogs*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-list"></i><span> Blogs & Articles
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/blogs') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.blogs.index') }}">All Blogs & Articles</a></li>
+                        <li class="{{ request()->is('admin/blog/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.blog.create') }}">Add Blog & Article</a></li>
+
+                    </ul>
+
+                </li>
+                {{-- Setting Route --}}
                 <li class=" {{ request()->is('admin/setting*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect select-btn"><i class="fas fa-cog"></i><span>
                             Settings <span class="float-right menu-arrow lol"><i

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Account\ProfileController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\FrontControllers\FrontController;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +35,6 @@ use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\Payment\PaymentController;
 
 use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\blog\BlogController;
 use App\Http\Controllers\Testimonial\TestimonialController;
 
 use App\Http\Controllers\FrontControllers\Cart\CartController;
@@ -71,6 +71,8 @@ Route::get('/adopting-a-service-dog', [FrontController::class, 'adoptingAService
 Route::get('/cart', [FrontController::class, 'cart'])->name('front.cart');
 Route::get('/checkout', [FrontController::class, 'checkout'])->name('front.checkout');
 Route::get('/payment', [FrontController::class, 'payment'])->name('front.payment');
+Route::get('/blog/{blog}', [FrontController::class, 'blogDetail'])->name('front.blog.detail');
+Route::get('/article/{blog}', [FrontController::class, 'articleDetail'])->name('front.article.detail');
 
 Route::middleware(['guest'])->group(function () {
 
@@ -130,6 +132,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/training/{training}/edit', [TrainingController::class, 'show'])->name('admin.training.edit');
         Route::put('/trainings/{training}/update', [TrainingController::class, 'update'])->name('admin.training.update');
         Route::post('/trainings/delete/{training}', [TrainingController::class, 'destroy'])->name('admin.training.destroy');
+
+        //       Admin blog Crud
+        Route::get('/blogs', [BlogController::class, 'index'])->name('admin.blogs.index');
+        Route::get('/blog/create', [BlogController::class, 'create'])->name('admin.blog.create');
+        Route::post('/blog/store', [BlogController::class, 'store'])->name('admin.blog.store');
+        Route::get('/blog/{blog}/edit', [BlogController::class, 'show'])->name('admin.blog.edit');
+        Route::put('/blog/{blog}/update', [BlogController::class, 'update'])->name('admin.blog.update');
+        Route::post('/blog/delete/{blog}', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
+
 
     });
 

@@ -6,7 +6,7 @@ use App\Services\Admin\CategoryService;
 use App\Services\Admin\CMSPagesService;
 use App\Services\Admin\ProductSizeService;
 use App\Services\Admin\SettingService;
-use App\Services\blog\BlogService;
+use App\Services\Admin\BlogService;
 use App\Services\Admin\FaqService;
 use App\Services\Admin\GraduateService;
 use App\Services\Admin\TrainingService;
@@ -48,6 +48,10 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->singleton(GraduateService::class, function ($app) {
             return GraduateService::getInstance();
+        });
+
+        $this->app->singleton(BlogService::class, function ($app) {
+            return BlogService::getInstance();
         });
     }
 

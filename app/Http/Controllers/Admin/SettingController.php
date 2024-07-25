@@ -33,7 +33,7 @@ class SettingController extends AdminBaseController
                 return WebResponses::errorRedirectBack($settings->getMessage());
             }
 
-            return back();
+            return WebResponses::successRedirectBack('Setting Page updated successfully');
         } catch (\Exception $exception) {
             return WebResponses::errorRedirectBack($exception->getMessage());
         }

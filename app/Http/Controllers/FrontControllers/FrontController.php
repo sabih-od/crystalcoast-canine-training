@@ -88,11 +88,12 @@ class FrontController extends Controller
    public function blogs()
    {
       $page = $this->cmsPagesService->getPageBySlug('blog');
-
+      $featureBlogs = Blog::where('is_feature', '1')->get();
+      $blogs = Blog::where('is_feature', '0')->get();
       return view(
          'front.pages.blogs-and-articales'
          ,
-         compact('page')
+         compact('page', 'featureBlogs', 'blogs')
       );
    }
 
@@ -227,6 +228,19 @@ class FrontController extends Controller
          'front.pages.payment'
          //  ,compact('data','page')
       );
+   }
+   public function blogDetail(Blog $blog)
+   {
+      $page = $this->cmsPagesService->getPageBySlug('blog');
+
+      return view('front.pages.follow-through', compact('blog', 'page'));
+   }
+   public function articleDetail(Blog $blog)
+   {
+      $page = $this->cmsPagesService->getPageBySlug('blog');
+
+
+      return view('front.pages.adopting-a-service-dog', compact('blog', 'page'));
    }
    // public function contactForm(ContactRequest $request)
    // {

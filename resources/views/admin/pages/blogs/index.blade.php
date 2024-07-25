@@ -1,10 +1,5 @@
 @extends('admin.layout.admin')
 @section('content')
-<style>
-    table.dataTable.nowrap td{
-        white-space: normal !important;
-    }
-</style>
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
@@ -16,18 +11,21 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Faq Listing</h4>
+                                <h4 class="mt-0 header-title">Blogs Listing</h4>
 
-                                <a href="{{ route('admin.faq.create') }}">
-                                    <button class="btn btn-dark">+ Add Faq</button>
+                                <a href="{{ route('admin.blog.create') }}">
+                                    <button class="btn btn-dark">+ Add Blog</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>Title</th>
-                                        <th>Description</th>
+                                        <th>Blog & Article Title</th>
+                                        <th>Blog & Article Heading</th>
+                                        <th>Blog & Article Button Text</th>
+                                        <th>Type</th>
+
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,12 +47,7 @@
     {{--    Routes for hitting ajax --}}
 
     <script>
-         function stripHtml(html) {
-        var temporalDivElement = document.createElement("div");
-        temporalDivElement.innerHTML = html;
-        return temporalDivElement.textContent || temporalDivElement.innerText || "";
-    }
-        var indexRoute = '{{ route('admin.faqs.index') }}';
+        var indexRoute = '{{ route('admin.blogs.index') }}';
 
         var moduleName = '{{ request()->segment(2) }}'; // Module is like a which route name is set (e.g : user or product)
 
@@ -63,12 +56,20 @@
                 name: 'title'
             },
             {
-                data: 'description',
-                name: 'description',
-                render: function(data, type, row) {
-                return stripHtml(data); // Strip HTML tags before displaying
-            }
+                data: 'heading',
+                name: 'heading'
+            },
+            {
+                data: 'button_text',
+                name: 'button_text'
+            },
+            {
+                data: 'is_feature',
+                name: 'type',
 
+                render: function(data, type, row) {
+                    return data == 0 ? 'Blog' : 'Article'; // Conditional rendering
+                }
             },
             {
                 data: 'action',
@@ -78,11 +79,11 @@
         ];
     </script>
     <script>
-        function confirmDelete(faqId) {
+        function confirmDelete(blogId) {
             $('#confirmModal').modal('show');
             $('#ok_delete').click(function() {
                 $.ajax({
-                    url: '{{ route('admin.faq.destroy', ['faq' => ':id']) }}'.replace(':id', faqId),
+                    url: '{{ route('admin.blog.destroy', ['blog' => ':id']) }}'.replace(':id', blogId),
                     type: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}',
