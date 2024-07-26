@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Services\Admin\BehaviorService;
 use App\Services\Admin\CategoryService;
 use App\Services\Admin\CMSPagesService;
+use App\Services\Admin\PriceCategoryService;
 use App\Services\Admin\ProductSizeService;
 use App\Services\Admin\SettingService;
 use App\Services\Admin\BlogService;
@@ -67,6 +68,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(ProductCategoryService::class, function ($app) {
             return ProductCategoryService::getInstance();
+        });
+
+        $this->app->singleton(PriceCategoryService::class, function ($app) {
+            return PriceCategoryService::getInstance();
         });
     }
 
