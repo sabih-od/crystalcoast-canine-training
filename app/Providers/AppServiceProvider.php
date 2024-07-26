@@ -6,6 +6,7 @@ use App\Services\Admin\BehaviorService;
 use App\Services\Admin\CategoryService;
 use App\Services\Admin\CMSPagesService;
 use App\Services\Admin\PriceCategoryService;
+use App\Services\Admin\ProductService;
 use App\Services\Admin\ProductSizeService;
 use App\Services\Admin\SettingService;
 use App\Services\Admin\BlogService;
@@ -19,8 +20,6 @@ use App\Services\Notification\NotificationService;
 use App\Services\Order\OrderService;
 use App\Services\Payment\Gateways\StripeCheckoutService;
 use App\Services\Payment\PaymentService;
-use App\Services\Product\ProductReviewService;
-use App\Services\Product\ProductService;
 use App\Services\User\UserService;
 use Illuminate\Support\ServiceProvider;
 
@@ -72,6 +71,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(PriceCategoryService::class, function ($app) {
             return PriceCategoryService::getInstance();
+        });
+
+        $this->app->singleton(ProductService::class, function ($app) {
+            return ProductService::getInstance();
         });
     }
 

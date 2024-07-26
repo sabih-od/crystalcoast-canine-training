@@ -27,6 +27,20 @@
                     </ul>
 
                 </li>
+                <li class=" {{ request()->is('admin/products*') ? '' : 'select-menu' }}">
+                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                                class="fas fa-question-circle"></i><span> Products
+                                <span class="float-right menu-arrow select-btn "><i
+                                        class="mdi mdi-chevron-right"></i></span></span></a>
+                        <ul class="submenu">
+                            <li class="{{ request()->is('admin/products') ? 'active-nav' : '' }}"><a
+                                    href="{{ route('admin.products.index') }}">All Products</a></li>
+                            <li class="{{ request()->is('admin/product/create') ? 'active-nav' : '' }}"><a
+                                    href="{{ route('admin.product.create') }}">Add Product</a></li>
+    
+                        </ul>
+    
+                    </li>
 
                 <li class=" {{ request()->is('admin/price-categories*') ? '' : 'select-menu' }}">
                         <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i

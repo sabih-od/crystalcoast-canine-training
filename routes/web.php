@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GraduateController;
 use App\Http\Controllers\Admin\PriceCategoryController;
 use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TrainingContentController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\Auth\RegisterController as UserRegisterController;
@@ -37,8 +38,6 @@ use App\Http\Controllers\User\WishlistController;
 
 use App\Http\Controllers\Payment\PaymentController;
 
-use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\Testimonial\TestimonialController;
 
 use App\Http\Controllers\FrontControllers\Cart\CartController;
 use App\Http\Controllers\FrontControllers\Checkout\CheckoutController;
@@ -177,6 +176,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/price-category/{priceCategory}/edit', [PriceCategoryController::class, 'show'])->name('admin.priceCategory.edit');
         Route::put('/price-category/{priceCategory}/update', [PriceCategoryController::class, 'update'])->name('admin.priceCategory.update');
         Route::post('/price-category/delete/{priceCategory}', [PriceCategoryController::class, 'destroy'])->name('admin.priceCategory.destroy');
+
+             // Product 
+
+             Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+             Route::get('/product/create', [ProductController::class, 'create'])->name('admin.product.create');
+             Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
+             Route::get('/product/{product}/edit', [ProductController::class, 'show'])->name('admin.product.edit');
+             Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('admin.product.update');
+             Route::post('/product/delete/{product}', [ProductController::class, 'destroy'])->name('admin.product.destroy');
 
     });
 
