@@ -13,6 +13,20 @@
                             Dashboard </span>
                     </a>
                 </li>
+                <li class=" {{ request()->is('admin/categories*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-question-circle"></i><span> Product Categories
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/categories') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.categories.index') }}">All Product Categories</a></li>
+                        <li class="{{ request()->is('admin/category/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.category.create') }}">Add Product Category</a></li>
+
+                    </ul>
+
+                </li>
                 <li class=" {{ request()->is('admin/blog*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
                             class="fas fa-list"></i><span> CMS
@@ -95,35 +109,35 @@
                 </li>
 
                 <li class=" {{ request()->is('admin/taining-contents*') ? '' : 'select-menu' }}">
-                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-award"></i><span> Trainings
-                                <span class="float-right menu-arrow select-btn "><i
-                                        class="mdi mdi-chevron-right"></i></span></span></a>
-                        <ul class="submenu">
-                            <li class="{{ request()->is('admin/training-contents') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.trainingContents.index') }}">Trainings</a></li>
-                            <li class="{{ request()->is('admin/trainingContent/create') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.trainingContent.create') }}">Add Training</a></li>
-    
-                        </ul>
-    
-                    </li>
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-award"></i><span> Trainings
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/training-contents') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.trainingContents.index') }}">Trainings</a></li>
+                        <li class="{{ request()->is('admin/trainingContent/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.trainingContent.create') }}">Add Training</a></li>
+
+                    </ul>
+
+                </li>
 
 
-                    <li class=" {{ request()->is('admin/behaviors*') ? '' : 'select-menu' }}">
-                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-atom"></i><span> Behaviors
-                                <span class="float-right menu-arrow select-btn "><i
-                                        class="mdi mdi-chevron-right"></i></span></span></a>
-                        <ul class="submenu">
-                            <li class="{{ request()->is('admin/behaviors') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.behaviors.index') }}">All Behaviors</a></li>
-                            <li class="{{ request()->is('admin/behavior/create') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.behavior.create') }}">Add Behavior</a></li>
-    
-                        </ul>
-    
-                    </li>
+                <li class=" {{ request()->is('admin/behaviors*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-atom"></i><span> Behaviors
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/behaviors') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.behaviors.index') }}">All Behaviors</a></li>
+                        <li class="{{ request()->is('admin/behavior/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.behavior.create') }}">Add Behavior</a></li>
+
+                    </ul>
+
+                </li>
                 {{-- Setting Route --}}
                 <li class=" {{ request()->is('admin/setting*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect select-btn"><i class="fas fa-cog"></i><span>

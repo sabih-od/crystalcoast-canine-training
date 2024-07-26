@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\Order\OrderReturnController;
 use App\Http\Controllers\Admin\CMSPagesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GraduateController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\TrainingContentController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\Auth\RegisterController as UserRegisterController;
@@ -158,6 +159,14 @@ Route::prefix('admin')->group(function () {
         Route::put('/behavior/{behavior}/update', [BehaviorController::class, 'update'])->name('admin.behavior.update');
         Route::post('/behavior/delete/{behavior}', [BehaviorController::class, 'destroy'])->name('admin.behavior.destroy');
 
+        // Product Category 
+
+        Route::get('/categories', [ProductCategoryController::class, 'index'])->name('admin.categories.index');
+        Route::get('/category/create', [ProductCategoryController::class, 'create'])->name('admin.category.create');
+        Route::post('/category/store', [ProductCategoryController::class, 'store'])->name('admin.category.store');
+        Route::get('/category/{category}/edit', [ProductCategoryController::class, 'show'])->name('admin.category.edit');
+        Route::put('/category/{category}/update', [ProductCategoryController::class, 'update'])->name('admin.category.update');
+        Route::post('/category/delete/{category}', [ProductCategoryController::class, 'destroy'])->name('admin.category.destroy');
 
     });
 

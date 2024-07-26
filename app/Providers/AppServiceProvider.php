@@ -10,6 +10,7 @@ use App\Services\Admin\SettingService;
 use App\Services\Admin\BlogService;
 use App\Services\Admin\FaqService;
 use App\Services\Admin\GraduateService;
+use App\Services\Admin\ProductCategoryService;
 use App\Services\Admin\TrainingContentService;
 use App\Services\Admin\TrainingService;
 use App\Services\Testimonial\TestimonialService;
@@ -62,6 +63,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(TrainingContentService::class, function ($app) {
             return TrainingContentService::getInstance();
+        });
+
+        $this->app->singleton(ProductCategoryService::class, function ($app) {
+            return ProductCategoryService::getInstance();
         });
     }
 
