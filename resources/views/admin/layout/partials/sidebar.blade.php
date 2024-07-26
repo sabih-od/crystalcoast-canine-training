@@ -27,6 +27,21 @@
                     </ul>
 
                 </li>
+
+                <li class=" {{ request()->is('admin/price-categories*') ? '' : 'select-menu' }}">
+                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                                class="fas fa-question-circle"></i><span> Pricing Categories
+                                <span class="float-right menu-arrow select-btn "><i
+                                        class="mdi mdi-chevron-right"></i></span></span></a>
+                        <ul class="submenu">
+                            <li class="{{ request()->is('admin/price-categories') ? 'active-nav' : '' }}"><a
+                                    href="{{ route('admin.priceCategories.index') }}">All Pricing Categories</a></li>
+                            <li class="{{ request()->is('admin/price-category/create') ? 'active-nav' : '' }}"><a
+                                    href="{{ route('admin.priceCategory.create') }}">Add Pricing Category</a></li>
+    
+                        </ul>
+    
+                    </li>
                 <li class=" {{ request()->is('admin/blog*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
                             class="fas fa-list"></i><span> CMS
