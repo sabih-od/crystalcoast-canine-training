@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\Order\OrderReturnController;
 use App\Http\Controllers\Admin\CMSPagesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GraduateController;
+use App\Http\Controllers\Admin\PriceCategoryController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\TrainingContentController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
@@ -167,6 +168,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/category/{category}/edit', [ProductCategoryController::class, 'show'])->name('admin.category.edit');
         Route::put('/category/{category}/update', [ProductCategoryController::class, 'update'])->name('admin.category.update');
         Route::post('/category/delete/{category}', [ProductCategoryController::class, 'destroy'])->name('admin.category.destroy');
+
+        // Product Category 
+
+        Route::get('/price-categories', [PriceCategoryController::class, 'index'])->name('admin.priceCategories.index');
+        Route::get('/price-category/create', [PriceCategoryController::class, 'create'])->name('admin.priceCategory.create');
+        Route::post('/price-category/store', [PriceCategoryController::class, 'store'])->name('admin.priceCategory.store');
+        Route::get('/price-category/{priceCategorie}/edit', [PriceCategoryController::class, 'show'])->name('admin.priceCategory.edit');
+        Route::put('/price-category/{priceCategorie}/update', [PriceCategoryController::class, 'update'])->name('admin.priceCategory.update');
+        Route::post('/price-category/delete/{priceCategorie}', [PriceCategoryController::class, 'destroy'])->name('admin.priceCategory.destroy');
 
     });
 
