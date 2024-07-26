@@ -174,9 +174,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/price-categories', [PriceCategoryController::class, 'index'])->name('admin.priceCategories.index');
         Route::get('/price-category/create', [PriceCategoryController::class, 'create'])->name('admin.priceCategory.create');
         Route::post('/price-category/store', [PriceCategoryController::class, 'store'])->name('admin.priceCategory.store');
-        Route::get('/price-category/{priceCategorie}/edit', [PriceCategoryController::class, 'show'])->name('admin.priceCategory.edit');
-        Route::put('/price-category/{priceCategorie}/update', [PriceCategoryController::class, 'update'])->name('admin.priceCategory.update');
-        Route::post('/price-category/delete/{priceCategorie}', [PriceCategoryController::class, 'destroy'])->name('admin.priceCategory.destroy');
+        Route::get('/price-category/{priceCategory}/edit', [PriceCategoryController::class, 'show'])->name('admin.priceCategory.edit');
+        Route::put('/price-category/{priceCategory}/update', [PriceCategoryController::class, 'update'])->name('admin.priceCategory.update');
+        Route::post('/price-category/delete/{priceCategory}', [PriceCategoryController::class, 'destroy'])->name('admin.priceCategory.destroy');
 
     });
 

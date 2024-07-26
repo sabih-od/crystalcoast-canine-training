@@ -24,7 +24,7 @@
 
                         <div class="col-md-4 ">
                             <button class="btn btn-circle btn-dark float-right">
-                                <a href="{{ route('admin.priceCategory.index') }}"
+                                <a href="{{ route('admin.priceCategories.index') }}"
                                     style="text-align:center; color: #fff; padding: 5px; text-decoration: none; display: inline-block;float: right; margin-bottom: 3px">
                                     <i class="fas fa-arrow-left"></i></a>
                             </button>
@@ -36,7 +36,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.priceCategory.update', ['priceCategorie' => $priceCategory->id]) }}"
+                            <form action="{{ route('admin.priceCategory.update', ['priceCategory' => $priceCategory->id]) }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')

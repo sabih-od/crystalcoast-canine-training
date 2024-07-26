@@ -75,7 +75,7 @@
             $('#confirmModal').modal('show');
             $('#ok_delete').click(function() {
                 $.ajax({
-                    url: '{{ route('admin.priceCategory.destroy', ['priceCategorie' => ':id']) }}'.replace(
+                    url: '{{ route('admin.priceCategory.destroy', ['priceCategory' => ':id']) }}'.replace(
                         ':id',
                         trainingId),
                     type: 'POST',
