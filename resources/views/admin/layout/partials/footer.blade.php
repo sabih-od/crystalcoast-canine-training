@@ -22,7 +22,7 @@
 {{--this is for datatables & popup of delete modal--}}
 <script src="{{ asset('admin-assets/js/datatable.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 {{-- toastr js --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
