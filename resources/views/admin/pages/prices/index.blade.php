@@ -16,19 +16,20 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Products Listing</h4>
+                                <h4 class="mt-0 header-title">Prices Listing</h4>
 
-                                <a href="{{ route('admin.product.create') }}">
-                                    <button class="btn btn-dark">+ Add Product</button>
+                                <a href="{{ route('admin.price.create') }}">
+                                    <button class="btn btn-dark">+ Add Price</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Product Category</th>
+                                        <th>title</th>
+                                        <th>Price</th>
+                                        <th>Type</th>
+                                        <th>Price Category</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -50,26 +51,23 @@
     {{--    Routes for hitting ajax --}}
 
     <script>
-        function stripHtml(html) {
-            var temporalDivElement = document.createElement("div");
-            temporalDivElement.innerHTML = html;
-            return temporalDivElement.textContent || temporalDivElement.innerText || "";
-        }
-        var indexRoute = '{{ route('admin.products.index') }}';
+        var indexRoute = '{{ route('admin.prices.index') }}';
 
         var moduleName = '{{ request()->segment(2) }}';
 
         var columnsConfig = [{
-                data: 'name',
-                name: 'name',
+                data: 'title',
+                name: 'title',
             },
             {
-                data: 'description',
-                name: 'description',
-                render: function(data, type, row) {
-                    return stripHtml(data); // Strip HTML tags before displaying
-                },
-            }, {
+                data: 'price',
+                name: 'price',
+            },
+            {
+                data: 'lesson_or_week',
+                name: 'type',
+            },
+            {
                 data: 'category',
                 name: 'category',
             },
@@ -80,12 +78,12 @@
             }
         ];
 
-        function confirmDelete(productId) {
+        function confirmDelete(priceId) {
             $('#confirmModal').modal('show');
             $('#ok_delete').click(function() {
                 $.ajax({
-                    url: '{{ route('admin.product.destroy', ['product' => ':id']) }}'.replace(':id',
-                        productId),
+                    url: '{{ route('admin.price.destroy', ['price' => ':id']) }}'.replace(':id',
+                        priceId),
                     type: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}',

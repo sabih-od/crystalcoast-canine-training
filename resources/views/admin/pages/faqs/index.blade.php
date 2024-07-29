@@ -1,10 +1,10 @@
 @extends('admin.layout.admin')
 @section('content')
-<style>
-    table.dataTable.nowrap td{
-        white-space: normal !important;
-    }
-</style>
+    <style>
+        table.dataTable.nowrap td {
+            white-space: normal !important;
+        }
+    </style>
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
@@ -49,11 +49,11 @@
     {{--    Routes for hitting ajax --}}
 
     <script>
-         function stripHtml(html) {
-        var temporalDivElement = document.createElement("div");
-        temporalDivElement.innerHTML = html;
-        return temporalDivElement.textContent || temporalDivElement.innerText || "";
-    }
+        function stripHtml(html) {
+            var temporalDivElement = document.createElement("div");
+            temporalDivElement.innerHTML = html;
+            return temporalDivElement.textContent || temporalDivElement.innerText || "";
+        }
         var indexRoute = '{{ route('admin.faqs.index') }}';
 
         var moduleName = '{{ request()->segment(2) }}'; // Module is like a which route name is set (e.g : user or product)
@@ -66,8 +66,8 @@
                 data: 'description',
                 name: 'description',
                 render: function(data, type, row) {
-                return stripHtml(data); // Strip HTML tags before displaying
-            }
+                    return stripHtml(data); // Strip HTML tags before displaying
+                }
 
             },
             {

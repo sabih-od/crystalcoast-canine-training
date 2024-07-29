@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\CMSPagesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GraduateController;
 use App\Http\Controllers\Admin\PriceCategoryController;
+use App\Http\Controllers\Admin\PriceController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TrainingContentController;
@@ -177,14 +178,23 @@ Route::prefix('admin')->group(function () {
         Route::put('/price-category/{priceCategory}/update', [PriceCategoryController::class, 'update'])->name('admin.priceCategory.update');
         Route::post('/price-category/delete/{priceCategory}', [PriceCategoryController::class, 'destroy'])->name('admin.priceCategory.destroy');
 
-             // Product 
+        // Product 
 
-             Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-             Route::get('/product/create', [ProductController::class, 'create'])->name('admin.product.create');
-             Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
-             Route::get('/product/{product}/edit', [ProductController::class, 'show'])->name('admin.product.edit');
-             Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('admin.product.update');
-             Route::post('/product/delete/{product}', [ProductController::class, 'destroy'])->name('admin.product.destroy');
+        Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+        Route::get('/product/create', [ProductController::class, 'create'])->name('admin.product.create');
+        Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
+        Route::get('/product/{product}/edit', [ProductController::class, 'show'])->name('admin.product.edit');
+        Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('admin.product.update');
+        Route::post('/product/delete/{product}', [ProductController::class, 'destroy'])->name('admin.product.destroy');
+
+        // Product Prices
+
+        Route::get('/prices', [PriceController::class, 'index'])->name('admin.prices.index');
+        Route::get('/price/create', [PriceController::class, 'create'])->name('admin.price.create');
+        Route::post('/price/store', [PriceController::class, 'store'])->name('admin.price.store');
+        Route::get('/price/{price}/edit', [PriceController::class, 'show'])->name('admin.price.edit');
+        Route::put('/price/{price}/update', [PriceController::class, 'update'])->name('admin.price.update');
+        Route::post('/price/delete/{price}', [PriceController::class, 'destroy'])->name('admin.price.destroy');
 
     });
 

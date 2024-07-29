@@ -14,8 +14,14 @@ class PricingCategory extends Model
         'description'
     ];
 
+    public function price()
+    {
+        return $this->belongsTo(Price::class)->get();
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class)->get();
     }
+
 }

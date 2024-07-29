@@ -48,12 +48,9 @@
 
                                     <h4 class="mt-0 header-title">Create Product</h4>
                                     <div class="form-group">
-                                        <label for="name">Name *</label>
+                                        <label for="name">Name </label>
                                         <input type="text" name="name" id="name" class="form-control"
                                             value="{{ old('name') }}">
-                                        @error('name')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="roles">Category *</label>

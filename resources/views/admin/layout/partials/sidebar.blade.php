@@ -15,47 +15,62 @@
                 </li>
                 <li class=" {{ request()->is('admin/categories*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                            class="fas fa-question-circle"></i><span> Product Categories
+                            class="fas fa-layer-group"></i><span> Training Categories
                             <span class="float-right menu-arrow select-btn "><i
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
                         <li class="{{ request()->is('admin/categories') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.categories.index') }}">All Product Categories</a></li>
+                                href="{{ route('admin.categories.index') }}">All Training Categories</a></li>
                         <li class="{{ request()->is('admin/category/create') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.category.create') }}">Add Product Category</a></li>
+                                href="{{ route('admin.category.create') }}">Add Training Category</a></li>
 
                     </ul>
 
                 </li>
-                <li class=" {{ request()->is('admin/products*') ? '' : 'select-menu' }}">
-                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-question-circle"></i><span> Products
-                                <span class="float-right menu-arrow select-btn "><i
-                                        class="mdi mdi-chevron-right"></i></span></span></a>
-                        <ul class="submenu">
-                            <li class="{{ request()->is('admin/products') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.products.index') }}">All Products</a></li>
-                            <li class="{{ request()->is('admin/product/create') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.product.create') }}">Add Product</a></li>
-    
-                        </ul>
-    
-                    </li>
 
                 <li class=" {{ request()->is('admin/price-categories*') ? '' : 'select-menu' }}">
-                        <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                                class="fas fa-question-circle"></i><span> Pricing Categories
-                                <span class="float-right menu-arrow select-btn "><i
-                                        class="mdi mdi-chevron-right"></i></span></span></a>
-                        <ul class="submenu">
-                            <li class="{{ request()->is('admin/price-categories') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.priceCategories.index') }}">All Pricing Categories</a></li>
-                            <li class="{{ request()->is('admin/price-category/create') ? 'active-nav' : '' }}"><a
-                                    href="{{ route('admin.priceCategory.create') }}">Add Pricing Category</a></li>
-    
-                        </ul>
-    
-                    </li>
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-tags"></i><span> Subscription Categories
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/price-categories') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.priceCategories.index') }}">All Subscription Categories</a></li>
+                        <li class="{{ request()->is('admin/price-category/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.priceCategory.create') }}">Add Subscription Category</a></li>
+
+                    </ul>
+
+                </li>
+                <li class=" {{ request()->is('admin/prices*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-dollar-sign"></i><span> Subscriptions
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/prices') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.prices.index') }}">All Subscription</a></li>
+                        <li class="{{ request()->is('admin/price/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.price.create') }}">Add Subscription</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class=" {{ request()->is('admin/products*') ? '' : 'select-menu' }}">
+                    <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
+                            class="fas fa-archive"></i><span> Trainings
+                            <span class="float-right menu-arrow select-btn "><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                        <li class="{{ request()->is('admin/products') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.products.index') }}">All Trainings</a></li>
+                        <li class="{{ request()->is('admin/product/create') ? 'active-nav' : '' }}"><a
+                                href="{{ route('admin.product.create') }}">Add Training</a></li>
+
+                    </ul>
+
+                </li>
                 <li class=" {{ request()->is('admin/blog*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
                             class="fas fa-list"></i><span> CMS
