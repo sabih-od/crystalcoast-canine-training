@@ -12,6 +12,7 @@ use App\Services\Admin\SettingService;
 use App\Services\Admin\BlogService;
 use App\Services\Admin\FaqService;
 use App\Services\Admin\GraduateService;
+use App\Services\Admin\PriceService;
 use App\Services\Admin\ProductCategoryService;
 use App\Services\Admin\TrainingContentService;
 use App\Services\Admin\TrainingService;
@@ -75,6 +76,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(ProductService::class, function ($app) {
             return ProductService::getInstance();
+        });
+
+        $this->app->singleton(PriceService::class, function ($app) {
+            return PriceService::getInstance();
         });
     }
 

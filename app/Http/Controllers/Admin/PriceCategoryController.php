@@ -66,7 +66,6 @@ class PriceCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required'
         ]);
         $create = $this->priceCategoryService->createPricingCategory($request->all());
         if ($create instanceof \Exception) {
@@ -115,7 +114,6 @@ class PriceCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required'
         ]);
         $priceCategory = $this->priceCategoryService->updatePricingCategory($priceCategory, $request->all());
 

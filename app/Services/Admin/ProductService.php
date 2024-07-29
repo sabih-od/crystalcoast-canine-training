@@ -30,9 +30,9 @@ class ProductService
     {
         try {
             if ($limit != null) {
-                return $this->productModel->orderBy('created_at', 'desc')->limit($limit)->get();
+                return $this->productModel->with('productCategory')->orderBy('created_at', 'desc')->limit($limit)->get();
             }
-            return $this->productModel->orderBy('created_at', 'desc')->get();
+            return $this->productModel->with('productCategory')->orderBy('created_at', 'desc')->get();
         } catch (\Exception $e) {
             return $e;
         }
@@ -42,7 +42,9 @@ class ProductService
     {
         $products = $this->getAllProduct();
         return DataTables::of($products)
-
+            ->addColumn('category', function ($data) {
+                return $data->productCategory ? $data->productCategory->title : " ";
+            })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.product.edit', ['product' => $data->id]);
                 $deleteRoute = route('admin.product.destroy', ['product' => $data->id]);
