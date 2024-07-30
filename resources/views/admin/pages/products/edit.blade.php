@@ -1,7 +1,6 @@
 @extends('admin.layout.admin')
 @section('content')
     <div class="content-page">
-        {{-- @dd($itemAddons) --}}
 
         <!-- Start content -->
         <div class="content">
@@ -79,7 +78,7 @@
                                             @forelse ($itemAddons as $addon)
                                                 <option value="{{ $addon->id }}"
                                                     {{ in_array($addon->id, $product->price_category_ids ?? []) ? 'selected' : '' }}>
-                                                    {{ $addon->title }}
+                                                    {{ $addon->title  }}
                                                 </option>
                                             @empty
                                                 <option value="">No addons available</option>

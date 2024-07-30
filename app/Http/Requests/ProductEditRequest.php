@@ -24,7 +24,7 @@ class ProductEditRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name' => 'required',
+
             'product_category_id' => 'required',
             'description' => 'required',
             'price_category_ids' => 'required',
@@ -36,7 +36,6 @@ class ProductEditRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Name is required!',
             'product_category_id.required' => 'Category is required!',
             'price_category_ids.required' => 'At least One Category Price is required!',
             'description' => 'Description is required!',

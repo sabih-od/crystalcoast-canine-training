@@ -347,19 +347,22 @@
                 <h2 class="mainHead" data-aos="fade-up">TRAINING OPTIONS</h2>
             </div>
             <div class="row">
+                @foreach ($products as $item)
+                    
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="blog--card">
                         <figure><img src="{{ asset('front/images/option1.webp') }}" class="w-100" alt="img">
                         </figure>
                         <div class="blog--content">
-                            <h2>Board and Train</h2>
+                            <h2>{{ $item->title }}</h2>
                             <p>Our Board and Train program offers a hassle free way for your dog to receive training
                                 when you simply lack the time or need a few issues addressed.</p>
-                            <a href=" {{ route('front.board') }}" class="themeBtn">Learn More</a>
+                                <a href=" {{ route('front.trainingCategory', ['productCategory' => $item->id]) }}" class="themeBtn">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up">
+                    @endforeach
+                {{-- <div class="col-md-4" data-aos="fade-up">
                     <div class="blog--card">
                         <figure><img src="{{ asset('front/images/option2.webp') }}" class="w-100" alt="img">
                         </figure>
@@ -396,7 +399,7 @@
                             <a href=" {{ route('front.summer') }}" class="themeBtn">Learn More</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

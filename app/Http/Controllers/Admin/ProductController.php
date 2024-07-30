@@ -63,8 +63,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = $this->productCategoryService->getAllProductCategory();
-        $itemAddons = $this->pricingCategoryService->getAllPricingCategory();
-        return view($this->productService->productCreateView(),compact('categories','itemAddons'));
+        $itemAddons = $this->pricingCategoryService->relationPriceCategory();
+        return view($this->productService->productCreateView(), compact('categories', 'itemAddons'));
     }
 
     /**
@@ -94,7 +94,7 @@ class ProductController extends Controller
     {
         try {
             $categories = $this->productCategoryService->getAllProductCategory();
-            $itemAddons = $this->pricingCategoryService->getAllPricingCategory();
+            $itemAddons = $this->pricingCategoryService->relationPriceCategory();
             return view(
                 $this->productService->productEditView(),
                 compact('product', 'categories', 'itemAddons')

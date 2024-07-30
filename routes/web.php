@@ -76,6 +76,7 @@ Route::get('/checkout', [FrontController::class, 'checkout'])->name('front.check
 Route::get('/payment', [FrontController::class, 'payment'])->name('front.payment');
 Route::get('/blog/{blog}', [FrontController::class, 'blogDetail'])->name('front.blog.detail');
 Route::get('/article/{blog}', [FrontController::class, 'articleDetail'])->name('front.article.detail');
+Route::get('/trainings/{productCategory}', [FrontController::class, 'trainingCategory'])->name('front.trainingCategory');
 
 Route::middleware(['guest'])->group(function () {
 

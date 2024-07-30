@@ -25,6 +25,13 @@ class PriceCategoryService
     }
 
 
+
+    public function relationPriceCategory()
+    {
+    return $this->priceCategoryModel->with('prices')->get();
+    
+    }   
+
     public function getAllPricingCategory($limit = null)
     {
         try {
@@ -40,10 +47,10 @@ class PriceCategoryService
     {
         $priceCategory = $this->getAllPricingCategory();
         return DataTables::of($priceCategory)
-        ->editColumn('created_at', function ($data) {
-            $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
-            return $formattedDate;
-        })
+            ->editColumn('created_at', function ($data) {
+                $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+                return $formattedDate;
+            })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.priceCategory.edit', ['priceCategory' => $data->id]);
                 $deleteRoute = route('admin.priceCategory.destroy', ['priceCategory' => $data->id]);
