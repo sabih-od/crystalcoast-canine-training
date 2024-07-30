@@ -30,7 +30,7 @@
                             <li class="nav-item drop-down">
                                 <a class="nav-link" href="#">Training</a>
                                 <ul>
-                                    @forelse  ($categories as $item)
+                                    @forelse  ($category as $item)
                                         <li><a
                                                 href="{{ route('front.trainingCategory', ['productCategory' => $item->id]) }}">{{ $item->title }}</a>
                                         </li>

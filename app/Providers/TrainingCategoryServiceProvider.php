@@ -28,7 +28,7 @@ class TrainingCategoryServiceProvider extends ServiceProvider
         View::composer(['front.*'], function ($view) {
             $settingService = app(ProductCategoryService::class);
             $categories = $settingService->getAllProductCategory();
-            $view->with('categories', $categories);
+            $view->with('category', $categories);
         });
 
     }
