@@ -35,7 +35,7 @@
                                                 href="{{ route('front.trainingCategory', ['productCategory' => $item->id]) }}">{{ $item->title }}</a>
                                         </li>
                                     @empty
-                                    @endforeach
+                                    @endforelse
                                     {{-- <li><a href="{{ route('front.board') }}">Board and Train</a></li>
                                     <li><a href=" {{ route('front.private') }}">Private Lessons</a></li>
                                     <li><a href=" {{ route('front.group') }}">Group Training</a></li>
