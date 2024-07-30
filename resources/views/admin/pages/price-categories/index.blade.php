@@ -16,10 +16,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Pricing Categories Listing</h4>
+                                <h4 class="mt-0 header-title">Subscription Categories Listing</h4>
 
                                 <a href="{{ route('admin.priceCategory.create') }}">
-                                    <button class="btn btn-dark">+ Add Pricing Category</button>
+                                    <button class="btn btn-dark">+ Add Subscription Category</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
@@ -53,11 +53,11 @@
 
         var columnsConfig = [{
                 data: 'title',
-                name: 'Title'
+                name: 'title'
             },
             {
                 data: 'description',
-                name: 'Description'
+                name: 'description'
             },
 
             {
@@ -66,7 +66,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

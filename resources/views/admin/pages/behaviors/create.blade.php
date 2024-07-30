@@ -25,9 +25,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.behaviors.index') }}">Behaviors</a>
+                                        <a href="{{ route('admin.behaviors.index') }}">Behaviours</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Create Behavior</li>
+                                    <li class="breadcrumb-item active">Create Behaviour</li>
                                 </ol>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Create Behavior</h4>
+                                <h4 class="mt-0 header-title">Create Behaviour</h4>
 
                                 <form method="POST" action="{{ route('admin.behavior.store') }}"
                                     enctype="multipart/form-data">
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
-                                                <label for="name">Behavior Image</label>
+                                                <label for="name">Behaviour Image</label>
                                                 <div class="col-lg-12">
                                                     <div class="panel panel-body">
                                                         <div id="crop-image"

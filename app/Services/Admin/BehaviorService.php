@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Behavior;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -45,8 +46,9 @@ class BehaviorService
     {
         $behaviors = $this->getAllbehaviors();
         return DataTables::of($behaviors)
-            ->addColumn('created_by', function ($data) {
-                return $data->user ? $data->user->name : " ";
+            ->editColumn('created_at', function ($data) {
+                $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+                return $formattedDate;
             })
             ->addColumn('image', function ($data) {
                 return $data->behaviorImage();

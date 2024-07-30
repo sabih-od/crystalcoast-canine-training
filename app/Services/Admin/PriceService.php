@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Price;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -42,6 +43,10 @@ class PriceService
     {
         $prices = $this->getAllPrice();
         return DataTables::of($prices)
+        ->editColumn('created_at', function ($data) {
+            $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+            return $formattedDate;
+        })
             ->addColumn('category', function ($data) {
                 return $data->priceCategory ? $data->priceCategory->title : " ";
             })

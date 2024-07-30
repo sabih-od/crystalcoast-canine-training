@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\PricingCategory;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -39,6 +40,10 @@ class PriceCategoryService
     {
         $priceCategory = $this->getAllPricingCategory();
         return DataTables::of($priceCategory)
+        ->editColumn('created_at', function ($data) {
+            $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+            return $formattedDate;
+        })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.priceCategory.edit', ['priceCategory' => $data->id]);
                 $deleteRoute = route('admin.priceCategory.destroy', ['priceCategory' => $data->id]);

@@ -18,9 +18,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.products.index') }}">Products</a>
+                                        <a href="{{ route('admin.products.index') }}">Trainings</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Edit Products</li>
+                                    <li class="breadcrumb-item active">Edit Training</li>
                                 </ol>
                             </div>
                         </div>
@@ -45,17 +45,17 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="mt-0 header-title">Edit Product</h4>
+                                    <h4 class="mt-0 header-title">Edit Training</h4>
                                     <div class="form-group">
                                         <label for="name">Name </label>
                                         <input type="text" name="name" id="name" class="form-control"
                                             value="{{ $product->name ?? old('name') }}">
-                                        
+
                                     </div>
                                     <div class="form-group">
                                         <label for="roles">Category *</label>
                                         <select name="product_category_id" id="parent_id" class="form-control">
-                                            <option value="0" disabled>Select Category</option>
+                                            <option value="0" disabled>Select Training Category</option>
                                             @forelse ($categories as $category)
                                                 <option style="font-weight: bold;" value="{{ $category->id }}"
                                                     @if ($category->id == $product->product_category_id) selected @endif>
@@ -75,7 +75,7 @@
                                         <label for="addons">Addon *</label>
                                         <select name="price_category_ids[]" id="addons" class="form-control selectpicker"
                                             multiple data-live-search="true">
-                                            <option value="" disabled>Select Addons</option>
+                                            <option value="" disabled>Select Subsciptions Category</option>
                                             @forelse ($itemAddons as $addon)
                                                 <option value="{{ $addon->id }}"
                                                     {{ in_array($addon->id, $product->price_category_ids ?? []) ? 'selected' : '' }}>
@@ -113,7 +113,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="left-area">
-                                                            <label class="heading">Product Image *</label>
+                                                            <label class="heading">Training Image *</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
@@ -145,7 +145,7 @@
                                                 <div class="row text-center">
                                                     <div class="col-6 offset-3">
                                                         <button type="submit" class="addProductSubmit-btn">Update
-                                                            Product
+                                                            Training
                                                         </button>
                                                     </div>
                                                 </div>

@@ -154,12 +154,12 @@
 
                 <li class=" {{ request()->is('admin/taining-contents*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                            class="fas fa-award"></i><span> Trainings
+                            class="fas fa-award"></i><span> Training Contents
                             <span class="float-right menu-arrow select-btn "><i
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
                         <li class="{{ request()->is('admin/training-contents') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.trainingContents.index') }}">Trainings</a></li>
+                                href="{{ route('admin.trainingContents.index') }}">Training Contents</a></li>
                         <li class="{{ request()->is('admin/trainingContent/create') ? 'active-nav' : '' }}"><a
                                 href="{{ route('admin.trainingContent.create') }}">Add Training</a></li>
 
@@ -170,14 +170,14 @@
 
                 <li class=" {{ request()->is('admin/behaviors*') ? '' : 'select-menu' }}">
                     <a href="javascript:void(0);" class="waves-effect selectBtn select-btn"><i
-                            class="fas fa-atom"></i><span> Behaviors
+                            class="fas fa-atom"></i><span> Behaviour Contents
                             <span class="float-right menu-arrow select-btn "><i
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
                         <li class="{{ request()->is('admin/behaviors') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.behaviors.index') }}">All Behaviors</a></li>
+                                href="{{ route('admin.behaviors.index') }}">All Behaviour Contents</a></li>
                         <li class="{{ request()->is('admin/behavior/create') ? 'active-nav' : '' }}"><a
-                                href="{{ route('admin.behavior.create') }}">Add Behavior</a></li>
+                                href="{{ route('admin.behavior.create') }}">Add Behaviours</a></li>
 
                     </ul>
 

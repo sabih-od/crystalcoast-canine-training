@@ -18,9 +18,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.prices.index') }}">Prices</a>
+                                        <a href="{{ route('admin.prices.index') }}">Subscriptions</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Edit Prices</li>
+                                    <li class="breadcrumb-item active">Edit Subscription</li>
                                 </ol>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="mt-0 header-title">Create Price</h4>
+                                    <h4 class="mt-0 header-title">Create Subscription</h4>
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="form-group">
@@ -112,7 +112,7 @@
                         </div>
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btn-dark">Edit
-                                Price
+                                Subscription
                             </button>
                         </div>
                     </div>

@@ -15,9 +15,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.categories.index') }}">Product Category</a>
+                                        <a href="{{ route('admin.categories.index') }}">Training Category</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Edit Product Category</li>
+                                    <li class="breadcrumb-item active">Edit Training Category</li>
                                 </ol>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Update Product Category</button>
+                                    <button type="submit" class="btn btn-primary">Update Training Category</button>
                                 </div>
                             </form>
                         </div>

@@ -25,9 +25,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.behaviors.index') }}">Product Categories</a>
+                                        <a href="{{ route('admin.behaviors.index') }}">Training Categories</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Create Product Category</li>
+                                    <li class="breadcrumb-item active">Create Training Category</li>
                                 </ol>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Create Product Category</h4>
+                                <h4 class="mt-0 header-title">Create Training Category</h4>
 
                                 <form method="POST" action="{{ route('admin.category.store') }}"
                                     enctype="multipart/form-data">

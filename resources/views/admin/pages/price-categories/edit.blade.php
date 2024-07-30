@@ -15,9 +15,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.priceCategories.index') }}">Training </a>
+                                        <a href="{{ route('admin.priceCategories.index') }}">Subscription Categories </a>
                                     </li>
-                                    <li class="breadcrumb-item active">Edit Training </li>
+                                    <li class="breadcrumb-item active">Edit Subscription Category </li>
                                 </ol>
                             </div>
                         </div>
@@ -36,7 +36,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.priceCategory.update', ['priceCategory' => $priceCategory->id]) }}"
+                            <form
+                                action="{{ route('admin.priceCategory.update', ['priceCategory' => $priceCategory->id]) }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')

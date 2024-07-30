@@ -16,10 +16,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Products Listing</h4>
+                                <h4 class="mt-0 header-title">Trainings Listing</h4>
 
                                 <a href="{{ route('admin.product.create') }}">
-                                    <button class="btn btn-dark">+ Add Product</button>
+                                    <button class="btn btn-dark">+ Add Training</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
@@ -28,7 +28,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Description</th>
-                                        <th>Product Category</th>
+                                        <th>Training Category</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -75,7 +75,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

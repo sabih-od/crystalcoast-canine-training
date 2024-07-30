@@ -15,9 +15,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.behaviors.index') }}">Behavior</a>
+                                        <a href="{{ route('admin.behaviors.index') }}">Behaviours</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Edit Behavior</li>
+                                    <li class="breadcrumb-item active">Edit Behaviour</li>
                                 </ol>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <label for="parent_id">Behavior Image</label>
+                                            <label for="parent_id">Behaviour Image</label>
                                             <div class="col-lg-12">
                                                 <div class="panel panel-body">
                                                     <div id="crop-image"
@@ -78,7 +78,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Update Behavior</button>
+                                    <button type="submit" class="btn btn-primary">Update Behaviour</button>
                                 </div>
                             </form>
                         </div>

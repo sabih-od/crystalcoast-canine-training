@@ -18,9 +18,9 @@
                                         <a class="text-decoration-none"
                                             href="
                                            {{ route('admin.prices.index') }}
-                                           ">Prices</a>
+                                           ">Subscriptions</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Create Price</li>
+                                    <li class="breadcrumb-item active">Create Subscription</li>
                                 </ol>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
 
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btn-dark">Create
-                                Price
+                                Subscription
                             </button>
                         </div>
                     </div>
