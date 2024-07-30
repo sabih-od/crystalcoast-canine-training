@@ -30,10 +30,15 @@
                             <li class="nav-item drop-down">
                                 <a class="nav-link" href="#">Training</a>
                                 <ul>
-                                    <li><a href="{{ route('front.board') }}">Board and Train</a></li>
+                                    @foreach ($categories as $item)
+                                        <li><a
+                                                href="{{ route('front.trainingCategory', ['productCategory' => $item->id]) }}">{{ $item->title }}</a>
+                                        </li>
+                                    @endforeach
+                                    {{-- <li><a href="{{ route('front.board') }}">Board and Train</a></li>
                                     <li><a href=" {{ route('front.private') }}">Private Lessons</a></li>
                                     <li><a href=" {{ route('front.group') }}">Group Training</a></li>
-                                    <li><a href=" {{ route('front.summer') }}">Summer Mini Sessions</a></li>
+                                    <li><a href=" {{ route('front.summer') }}">Summer Mini Sessions</a></li> --}}
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -42,7 +47,7 @@
                             <!-- </div> -->
                             <li class="nav-item mx-auto">
                                 <a class="nav-link centerLogo" href="{{ route('front.home') }}"><img
-                                        src="{{ $settings->settingImage('header_logo') ?? ''  }}" class="img-fluid"
+                                        src="{{ $settings->settingImage('header_logo') ?? '' }}" class="img-fluid"
                                         alt="img"></a>
                             </li>
                             <!-- <div class="right"> -->

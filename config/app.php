@@ -188,6 +188,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\Front\FooterServiceProvider::class,
         App\Providers\Front\SettingsServiceProvider::class,
+        App\Providers\TrainingCategoryServiceProvider::class,
      
 
     ],

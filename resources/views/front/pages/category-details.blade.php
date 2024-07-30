@@ -1,33 +1,33 @@
 @extends('front.layout.app')
 @section('content')
-
-
     <!-- Begin: Main Slider -->
     <div class="innerBan">
-        <img src="{{ $page->cmsImages('background_banner_image') }}" class="w-100" alt="">
+        <img src="{{ $page->cmsImages('background_banner_image') ?? '' }}" class="w-100" alt="">
         <div class="overlay">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <h2>Board and Train</h2>
+                        <h2>{{ $productCategory->title }}</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End: Main Slider -->
-@dd($product)
+
     <section class="trainInner">
         <div class="container-fluid p-0">
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <figure>
-                        <img src="{{ $product->productImage('product_image') ? '' }}" class="img-fluid" alt="">
+                        <img src="{{ $data['product']->productImage('product_image') ?? '' }}" class="img-fluid"
+                            alt="">
                     </figure>
                 </div>
                 <div class="col-md-6">
                     <div class="trainText">
-                        <p>The Board and Train program is available to dogs 4 months and older. This program varies but
+                        {!! $data['product']->description ?? '' !!}
+                        {{-- <p>The Board and Train program is available to dogs 4 months and older. This program varies but
                             can be 3 to 5 weeks in length and includes training, essential care, and board. Your dog
                             must be fully vaccinated prior to training and their food must be provided. Every dog must
                             be on a monthly fea, tick, and heart worm preventative.</p>
@@ -42,45 +42,54 @@
                             learn social manners and obedience in public and at home.</p>
                         <p>Age requirement for puppies is 5 months. <br>
                             Dogs 4 months and older must be fully vaccinated including Rabies</p>
+                    </div> --}}
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+    {{-- <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' "> --}}
 
     <section class="pricingSect">
         <div class="container">
             <h2 class="mainHead text-center">Our Pricing</h2>
-            <h3 class="heading-sm text-center mb-5">Specialty</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
-                        <h3>Remediation</h3>
-                        <a href="#"><span>$50</span>(Per Day)</a>
-                        <p>This course focuses on leash walking, going out in public, sit, and down. It is designed
-                            to
-                            give your pup an expedited training experience that helps them go to the beach, outdoor
-                            restaurants/ breweries, and the park while be well behaved.</p>
-                        <p>This course is not suitable for dogs with reactivity or high anxiety. An evaluation is
-                            not
-                            required, however if your dog shows signs of reactivity or high anxiety, we will
-                            recommend
-                            an alternate course.</p>
-                    </div>
+
+            @foreach ($data['priceings'] as $item)
+                <h3 class="heading-sm text-center mb-5 my-5">{{ $item->title }}</h3>
+                <p class="begavioralPara">{{ $item->description ?? '' }}</p>
+                <div class="row justify-content-center">
+                    @foreach ($item->prices as $price)
+                        <div class="col-md-3">
+                            <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
+                                <h3>{{ $price->title }}</h3>
+                                <a href="#"><span>${{ $price->price }}</span>{{ $price->lesson_or_week ?? '' }}</a>
+                                {!! $price->description ?? '' !!}
+                                {{-- <p>This course focuses on leash walking, going out in public, sit, and down. It is designed
+                                    to
+                                    give your pup an expedited training experience that helps them go to the beach, outdoor
+                                    restaurants/ breweries, and the park while be well behaved.</p>
+                                <p>This course is not suitable for dogs with reactivity or high anxiety. An evaluation is
+                                    not
+                                    required, however if your dog shows signs of reactivity or high anxiety, we will
+                                    recommend
+                                    an alternate course.</p> --}}
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="col-md-3">
+                <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
+                    <h3>Puppy Training</h3>
+                    <a href="#"><span>$2800</span>(4 Weeks) <span class="d-block">Ages 4-9 Months</span></a>
+                    <p>Basic Commands, Leash Walking, Socialization with people and dogs, Beach Walks, and Public
+                        Exposure</p>
                 </div>
-                <div class="col-md-3">
-                    <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
-                        <h3>Puppy Training</h3>
-                        <a href="#"><span>$2800</span>(4 Weeks) <span class="d-block">Ages 4-9 Months</span></a>
-                        <p>Basic Commands, Leash Walking, Socialization with people and dogs, Beach Walks, and Public
-                            Exposure</p>
-                    </div>
+            </div> --}}
                 </div>
-            </div>
+            @endforeach
+
         </div>
     </section>
 
-    <section class="pricingSect obedienceSect">
+    {{-- <section class="pricingSect obedienceSect">
         <div class="container">
             <h2 class="mainHead text-center mb-5">Obedience</h2>
             <div class="row justify-content-center">
@@ -94,27 +103,6 @@
                         <p>This course is not suitable for dogs with reactivity or high anxiety. An evaluation is not
                             required, however if your dog shows signs of reactivity or high anxiety, we will recommend
                             an alternate course.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
-                        <h3>Basic Obedience</h3>
-                        <a href="#"><span>$2100</span>(3 Weeks)</a>
-                        <p>Basic Commands (sit, down, place, heel, no off, come), Leash Walking, Socialization, and
-                             Public Exposure. This course goes more in depth with training than our Expedited Manners
-                            Course.</p>
-                        <p>Tools included: pinch collar and/or slip leash</p>
-                        <p>Evaluation required</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="pricingBox" onClick="window.location = '{{ route('front.cart') }}' ">
-                        <h3>Advanced Obedience</h3>
-                        <a href="#"><span>$4200</span>(5 Weeks)</a>
-                        <p>Advanced Commands with duration and precision implemented with Public Exposure and
-                            Distractions, Socialization, skills work around other dogs, and Off Leash Obedience.</p>
-                        <p>Tools included: Mini-Educator e-collar, slip leash, and/or pinch collar</p>
-                        <p>Evaluation required</p>
                     </div>
                 </div>
             </div>
@@ -156,7 +144,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="scheduleSec scheduleSec-white">
         <div class="container">

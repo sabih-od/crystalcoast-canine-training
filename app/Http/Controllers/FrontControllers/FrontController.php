@@ -11,6 +11,10 @@ use App\Models\CMSPages;
 use App\Models\Contact;
 use App\Models\Faq;
 use App\Models\GraduateGallery;
+use App\Models\Price;
+use App\Models\PricingCategory;
+use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\Testimonial;
 use App\Models\Training;
 use App\Models\TrainingGallery;
@@ -37,10 +41,11 @@ class FrontController extends Controller
       $page = $this->cmsPagesService->getPageBySlug('home');
       $trainings = Training::get();
       $behaviors = Behavior::get();
+      $products = ProductCategory::with('product')->get();
       return view(
          'front.pages.index'
          ,
-         compact('page', 'trainings', 'behaviors')
+         compact('page', 'trainings', 'products', 'behaviors')
       );
    }
 
@@ -294,5 +299,31 @@ class FrontController extends Controller
    //       return WebResponses::errorRedirectBack($exception->getMessage());
    //    }
    // }
+
+   public function trainingCategory(ProductCategory $productCategory)
+   {
+      try {
+         //code...
+
+         //throw $th;
+
+         $page = $this->cmsPagesService->getPageBySlug('blog');
+         $data = array();
+         $data['product'] = Product::with('productCategory')->findOrFail($productCategory->id);
+         $priceCategoryIds = $data['product']->price_category_ids;
+         if (!empty($priceCategoryIds) && is_array($priceCategoryIds)) {
+            $data['priceings'] = PricingCategory::whereIn('id', $priceCategoryIds)->with('prices')
+               ->get();
+            ;
+         } else {
+            $data['priceings'] = collect();
+         }
+
+         return view('front.pages.category-details', compact('data', 'page', 'productCategory'));
+      } catch (\Exception $e) {
+
+         return WebResponses::errorRedirectBack('this category have no any subscription');
+      }
+   }
 
 }

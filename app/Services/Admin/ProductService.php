@@ -81,7 +81,6 @@ class ProductService
 
     public function updateProduct($product, $productData)
     {
-
         try {
             if ($product) {
                 if (empty($productData['price_category_ids'])) {
@@ -96,6 +95,7 @@ class ProductService
                 throw new \Exception("Product Not Found");
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             return $e->getMessage();
         }
     }
