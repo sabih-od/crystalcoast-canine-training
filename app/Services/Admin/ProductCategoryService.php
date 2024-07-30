@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\ProductCategory;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -39,6 +40,10 @@ class ProductCategoryService
     {
         $category = $this->getAllProductCategory();
         return DataTables::of($category)
+        ->editColumn('created_at', function ($data) {
+            $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+            return $formattedDate;
+        })
             ->addColumn('action', function ($data) {
                 $editRoute = route('admin.category.edit', ['category' => $data->id]);
                 $deleteRoute = route('admin.category.destroy', ['category' => $data->id]);

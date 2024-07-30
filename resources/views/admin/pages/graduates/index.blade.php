@@ -62,7 +62,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

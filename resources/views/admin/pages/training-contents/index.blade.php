@@ -54,7 +54,7 @@
 
         var columnsConfig = [{
                 data: 'title',
-                name: 'Title'
+                name: 'title'
             },
             {
                 data: 'image',
@@ -65,7 +65,7 @@
             },
             {
                 data: 'description',
-                name: 'Description'
+                name: 'description'
             },
 
             {
@@ -74,7 +74,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

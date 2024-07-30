@@ -18,9 +18,9 @@
                                         <a class="text-decoration-none"
                                             href="
                                            {{ route('admin.products.index') }}
-                                           ">Products</a>
+                                           ">Trainings</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Create Product</li>
+                                    <li class="breadcrumb-item active">Create Training</li>
                                 </ol>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="mt-0 header-title">Create Product</h4>
+                                    <h4 class="mt-0 header-title">Create Training</h4>
                                     <div class="form-group">
                                         <label for="name">Name </label>
                                         <input type="text" name="name" id="name" class="form-control"
@@ -55,7 +55,7 @@
                                     <div class="form-group">
                                         <label for="roles">Category *</label>
                                         <select name="product_category_id" id="parent_id" class="form-control">
-                                            <option value="">Select Product Category</option>
+                                            <option value="">Select Training Category</option>
                                             @forelse ($categories as $category)
                                                 <option style="font-weight: bold;" value="{{ $category->id }}"
                                                     {{ old('product_category_id') == $category->id ? 'selected' : '' }}>
@@ -71,7 +71,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="addons">Pricing Category *</label>
+                                        <label for="addons">Subsciptions Category *</label>
                                         <select name="price_category_ids[]" id="addons" class="form-control selectpicker"
                                             multiple data-live-search="true">
                                             <option value="" disabled>Select Addons</option>
@@ -114,7 +114,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="left-area">
-                                                            <label class="heading">Product Image *</label>
+                                                            <label class="heading">Training Image *</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">

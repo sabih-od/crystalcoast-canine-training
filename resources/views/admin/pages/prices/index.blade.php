@@ -16,10 +16,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Prices Listing</h4>
+                                <h4 class="mt-0 header-title">Subscriptions Listing</h4>
 
                                 <a href="{{ route('admin.price.create') }}">
-                                    <button class="btn btn-dark">+ Add Price</button>
+                                    <button class="btn btn-dark">+ Add Subscription</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
@@ -65,7 +65,7 @@
             },
             {
                 data: 'lesson_or_week',
-                name: 'type',
+                name: 'lesson_or_week',
             },
             {
                 data: 'category',
@@ -73,7 +73,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

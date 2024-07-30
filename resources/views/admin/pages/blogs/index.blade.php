@@ -65,7 +65,7 @@
             },
             {
                 data: 'is_feature',
-                name: 'type',
+                name: 'is_feature',
 
                 render: function(data, type, row) {
                     return data == 0 ? 'Blog' : 'Article'; // Conditional rendering
@@ -73,7 +73,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

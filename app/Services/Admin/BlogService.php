@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Blog;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -42,6 +43,10 @@ class BlogService
     {
         $blogs = $this->getAllblogs();
         return DataTables::of($blogs)
+        ->editColumn('created_at', function ($data) {
+            $formattedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('m-d-Y');
+            return $formattedDate;
+        })
             ->addColumn('created_by', function ($data) {
                 return $data->user ? $data->user->name : " ";
             })

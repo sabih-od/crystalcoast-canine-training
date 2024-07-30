@@ -11,10 +11,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="mt-0 header-title">Product Category Listing</h4>
+                                <h4 class="mt-0 header-title">Training Category Listing</h4>
 
                                 <a href="{{ route('admin.category.create') }}">
-                                    <button class="btn btn-dark">+ Add Product Category</button>
+                                    <button class="btn btn-dark">+ Add Training Category</button>
                                 </a>
                             </div>
                             <table id="geniustable" class="table table-bordered dt-responsive nowrap"
@@ -48,7 +48,7 @@
 
         var columnsConfig = [{
                 data: 'title',
-                name: 'Title'
+                name: 'title'
             },
             {
                 data: 'created_at',
@@ -56,7 +56,7 @@
             },
             {
                 data: 'action',
-                searchable: false,
+                searchable: true,
                 orderable: false
             }
         ];

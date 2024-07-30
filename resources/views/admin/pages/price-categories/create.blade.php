@@ -25,9 +25,9 @@
                                         <a href="{{ route('admin.dashboard') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.priceCategories.index') }}">Priceing Categories</a>
+                                        <a href="{{ route('admin.priceCategories.index') }}">Subscription Categories</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Create Priceing Categorie</li>
+                                    <li class="breadcrumb-item active">Create Subscription Categorie</li>
                                 </ol>
                             </div>
                         </div>
