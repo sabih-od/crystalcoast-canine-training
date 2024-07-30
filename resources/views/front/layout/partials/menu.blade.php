@@ -30,10 +30,11 @@
                             <li class="nav-item drop-down">
                                 <a class="nav-link" href="#">Training</a>
                                 <ul>
-                                    @foreach ($categories as $item)
+                                    @forelse  ($categories as $item)
                                         <li><a
                                                 href="{{ route('front.trainingCategory', ['productCategory' => $item->id]) }}">{{ $item->title }}</a>
                                         </li>
+                                    @empty
                                     @endforeach
                                     {{-- <li><a href="{{ route('front.board') }}">Board and Train</a></li>
                                     <li><a href=" {{ route('front.private') }}">Private Lessons</a></li>
