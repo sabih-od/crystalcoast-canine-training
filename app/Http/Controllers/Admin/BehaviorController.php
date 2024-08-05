@@ -72,7 +72,7 @@ class BehaviorController extends Controller
         }
 
         return redirect()->route($this->behaviorService->behaviorReturnRoute())
-            ->with('success', 'Blog Added successfully');
+            ->with('success', 'Behaviour Added successfully');
     }
 
     /**

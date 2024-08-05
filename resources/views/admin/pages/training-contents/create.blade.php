@@ -62,8 +62,8 @@
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="name">Title *</label>
-                                                        <input type="text" name="title" id="title" class="form-control"
-                                                            value="{{ old('title') }}">
+                                                        <input type="text" name="title" id="title"
+                                                            class="form-control" value="{{ old('title') }}">
                                                         @error('title')
                                                             <span class="text-danger">{{ $message }}</span>
                                                         @enderror
@@ -73,7 +73,7 @@
                                                     <div class="form-group">
                                                         <label for="name">Description *</label>
                                                         <textarea class="form-control" name="description" placeholder="{{ __('Description') }}" id="description"
-                                                        style="width: 100%; height: 300px;">{{ old('description')}}</textarea>
+                                                            style="width: 100%; height: 300px;">{{ old('description') }}</textarea>
                                                         @error('description')
                                                             <span class="text-danger">{{ $message }}</span>
                                                         @enderror
@@ -81,35 +81,36 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <label for="parent_id">Training Image</label>
-                                            <div class="col-lg-12">
-                                                <div class="panel panel-body">
-                                                    <div id="crop-image"
-                                                        class="span4 cropme text-center d-flex justify-content-center"
-                                                        id="landscape"
-                                                        style="width: 100%; height: 285px; border: 1px dashed #ddd; background: #f1f1f1;">
-                                                        <img id="image-preview"
-                                                            src=""
-                                                            alt="Image Preview"
-                                                            style="max-width: 100%; max-height: 285px; object-fit:contain">
+                                                <div class="form-group col-md-12">
+                                                    <label for="name">Training Image *</label>
+                                                    <div class="col-lg-12">
+                                                        <div class="panel panel-body">
+                                                            <div id="crop-image"
+                                                                class="span4 cropme text-center d-flex justify-content-center"
+                                                                id="landscape"
+                                                                style="width: 100%; height: 385px; border: 1px dashed #ddd; background: #f1f1f1;">
+                                                                <button type="button" id="upload-btn" class="mybtn1">
+                                                                    <i class="icofont-upload-alt"></i> Upload Image Here
+                                                                </button>
+                                                                <img id="image-preview" src="" alt="Image Preview"
+                                                                    style="max-width: 100%; max-height: 285px; display: none;object-fit:contain">
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                    <input type="file" id="file-input" name="image" style="display: none;">
+                                                    <input type="hidden" id="feature_photo" value="" required="">
+                                                    @error('image')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </div>
-
                                             </div>
-                                            <input type="file" id="file-input" name="image" style="display: none;"
-                                                accept="image/*">
-                                            <input type="hidden" id="feature_photo" value="" required="">
-                                            @error('image')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                Create
+                                            </button>
+
+
                                         </div>
-
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                            Create
-                                        </button>
-
-
-                                    </div>
 
                                 </form>
                             </div>

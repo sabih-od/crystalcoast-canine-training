@@ -73,7 +73,7 @@ class ProductCategoryController extends Controller
         }
 
         return redirect()->route($this->categoryService->categoryReturnRoute())
-            ->with('success', 'Blog Added successfully');
+            ->with('success', 'Training Category Added successfully');
     }
 
     /**
@@ -122,7 +122,7 @@ class ProductCategoryController extends Controller
         }
 
         return redirect()->route($this->categoryService->categoryReturnRoute())
-            ->with('success', 'Category updated successfully');
+            ->with('success', 'Training Category updated successfully');
     }
 
     /**

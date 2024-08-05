@@ -59,7 +59,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
-                                                <label for="name">Category Image</label>
+                                                <label for="name">Training Gallery Image *</label>
                                                 <div class="col-lg-12">
                                                     <div class="panel panel-body">
                                                         <div id="crop-image"

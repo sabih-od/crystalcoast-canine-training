@@ -81,7 +81,7 @@ class ProductController extends Controller
         }
 
         return redirect()->route($this->productService->productReturnRoute())
-            ->with('success', 'Product Added successfully');
+            ->with('success', 'Trainings Added successfully');
     }
 
     /**
@@ -129,7 +129,7 @@ class ProductController extends Controller
         }
 
         return redirect()->route($this->productService->productReturnRoute())
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Training updated successfully');
     }
 
     /**

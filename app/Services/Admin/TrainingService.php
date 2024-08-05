@@ -51,8 +51,8 @@ class TrainingService
                 return $data->user ? $data->user->name : " ";
             })
             ->addColumn('action', function ($data) {
-                $editRoute = route('admin.trainingContent.edit', ['training' => $data->id]);
-                $deleteRoute = route('admin.trainingContent.destroy', ['training' => $data->id]);
+                $editRoute = route('admin.training.edit', ['training' => $data->id]);
+                $deleteRoute = route('admin.training.destroy', ['training' => $data->id]);
 
                 return '<a title="Edit" href="' . $editRoute . '" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;'
                     . '<button title="Delete" type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm" data-delete="' . $deleteRoute . '" onclick="confirmDelete(' . $data->id . ')"><i class="fa fa-trash"></i></button>';
@@ -122,26 +122,26 @@ class TrainingService
     public
         function trainingIndexView(
     ) {
-        return 'admin.pages.training-contents.index';
+        return 'admin.pages.trainings.index';
     }
 
     public
         function trainingCreateView(
     ) {
 
-        return 'admin.pages.training-contents.create';
+        return 'admin.pages.trainings.create';
     }
 
     public
         function trainingEditView(
     ) {
 
-        return 'admin.pages.training-contents.edit';
+        return 'admin.pages.trainings.edit';
     }
 
     public
         function trainingReturnRoute(
     ) {
-        return 'admin.training-contents.index';
+        return 'admin.trainings.index';
     }
 }

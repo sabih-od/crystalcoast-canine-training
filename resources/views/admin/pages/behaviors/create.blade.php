@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
-                                                <label for="name">Behaviour Image</label>
+                                                <label for="name">Behaviour Image * </label>
                                                 <div class="col-lg-12">
                                                     <div class="panel panel-body">
                                                         <div id="crop-image"

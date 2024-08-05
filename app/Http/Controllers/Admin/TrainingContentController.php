@@ -73,7 +73,7 @@ class TrainingContentController extends Controller
         }
 
         return redirect()->route($this->trainingService->trainingContentReturnRoute())
-            ->with('success', 'Blog Added successfully');
+            ->with('success', 'Training Content  Added successfully');
     }
 
     /**
@@ -119,7 +119,7 @@ class TrainingContentController extends Controller
         }
 
         return redirect()->route($this->trainingService->trainingContentReturnRoute())
-            ->with('success', 'Training updated successfully');
+            ->with('success', 'Training Content updated successfully');
     }
 
     /**

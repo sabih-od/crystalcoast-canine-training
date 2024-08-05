@@ -73,7 +73,7 @@ class PriceCategoryController extends Controller
         }
 
         return redirect()->route($this->priceCategoryService->priceCategoryReturnRoute())
-            ->with('success', 'Blog Added successfully');
+            ->with('success', 'Subscription Category Added successfully');
     }
 
     /**
@@ -122,7 +122,7 @@ class PriceCategoryController extends Controller
         }
 
         return redirect()->route($this->priceCategoryService->priceCategoryReturnRoute())
-            ->with('success', 'Category updated successfully');
+            ->with('success', 'Subscription Category updated successfully');
     }
 
     /**
