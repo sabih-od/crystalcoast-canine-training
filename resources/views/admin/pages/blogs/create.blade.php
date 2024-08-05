@@ -153,7 +153,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="left-area">
-                                                            <label class="heading">Blog Or Article Image </label>
+                                                            <label class="heading">Blog Or Article Image *</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">

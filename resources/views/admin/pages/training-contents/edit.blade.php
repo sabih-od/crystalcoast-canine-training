@@ -68,7 +68,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <label for="parent_id">Training Image</label>
+                                                <label for="parent_id">Training Image *</label>
                                             <div class="col-lg-12">
                                                 <div class="panel panel-body">
                                                     <div id="crop-image"

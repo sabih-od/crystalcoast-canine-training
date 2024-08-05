@@ -48,7 +48,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Create Gallery</h4>
+                                <h4 class="mt-0 header-title">Create Training Gallery</h4>
 
                                 <form method="POST" action="{{ route('admin.training.store') }}"
                                     enctype="multipart/form-data">

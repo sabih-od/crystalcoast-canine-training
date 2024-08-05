@@ -44,7 +44,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group col-md-12">
-                                            <label for="parent_id">Category Image</label>
+                                            <label for="parent_id">Graduate Gallery Image *</label>
                                             <div class="col-lg-12">
                                                 <div class="panel panel-body">
                                                     <div id="crop-image"
